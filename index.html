@@ -22,81 +22,64 @@
             <a class="navbar-item">
                 Documentation
             </a>
-
-            <div class="navbar-item has-dropdown is-hoverable">
-                <a class="navbar-link">
-                    More
-                </a>
-
-                <div class="navbar-dropdown">
-                    <a class="navbar-item">
-                        About
-                    </a>
-                    <a class="navbar-item">
-                        Jobs
-                    </a>
-                    <a class="navbar-item">
-                        Contact
-                    </a>
-                    <hr class="navbar-divider">
-                    <a class="navbar-item">
-                        Report an issue
-                    </a>
-                </div>
-            </div>
         </div>
     </div>
 </nav>
 <div class="container">
-    <div class="notification is-primary">
-        Start here
-    </div>
     <div class="content">
-        <h1>Installing a minecraft server</h1>
-        <p>Lorem ipsum<sup><a>[1]</a></sup> dolor sit amet, consectetur adipiscing elit. Nulla accumsan, metus ultrices
-            eleifend gravida, nulla nunc varius lectus, nec rutrum justo nibh eu lectus. Ut vulputate semper dui. Fusce
-            erat odio, sollicitudin vel erat vel, interdum mattis neque. Sub<sub>script</sub> works as well!</p>
-        <h2>Second level</h2>
-        <p>Curabitur accumsan turpis pharetra <strong>augue tincidunt</strong> blandit. Quisque condimentum maximus mi,
-            sit amet commodo arcu rutrum id. Proin pretium urna vel cursus venenatis. Suspendisse potenti. Etiam mattis
-            sem rhoncus lacus dapibus facilisis. Donec at dignissim dui. Ut et neque nisl.</p>
+        <figure>
+            <img src="images/mc.jpg" class="image" style="max-height: 66wh;">
+        </figure>
+        <h1 id="jak-nainstalovat-minecraftový-server">Jak nainstalovat minecraftový server</h1>
+        <h2 id="předpoklady">Předpoklady</h2>
         <ul>
-            <li>In fermentum leo eu lectus mollis, quis dictum mi aliquet.</li>
-            <li>Morbi eu nulla lobortis, lobortis est in, fringilla felis.</li>
-            <li>Aliquam nec felis in sapien venenatis viverra fermentum nec lectus.</li>
-            <li>Ut non enim metus.</li>
+            <li>Fyzický počítač nebo VPS s operačním systémem Windows, GNU/Linux, MacOS, FreeBSD, OpenBSD nebo Androidem
+            </li>
+            <blockquote>VPS je Virtuální Privátní Server. Ten běží na fyzickém počítače v datovém centru, ale dělí se o obrovský výkon s ostatními virtuálními servery. Každý uživatel tak má část prostředků, které fyzický server nabízí.</blockquote>
+            <li>Nejlépe alespoň 4GB RAM a procesor s dobrým jednojádrovým výkonem</li>
+            <li>Rychlé připojení k internetu v obou směrech (nejlépe alespoň 50MB/s)</li>
+            <li>Přístup k nastavení routeru (není nutné u VPS)</li>
         </ul>
-        <h3>Third level</h3>
-        <p>Quisque ante lacus, malesuada ac auctor vitae, congue <a href="#">non ante</a>. Phasellus lacus ex, semper ac
-            tortor nec, fringilla condimentum orci. Fusce eu rutrum tellus.</p>
-        <ol>
-            <li>Donec blandit a lorem id convallis.</li>
-            <li>Cras gravida arcu at diam gravida gravida.</li>
-            <li>Integer in volutpat libero.</li>
-            <li>Donec a diam tellus.</li>
-            <li>Aenean nec tortor orci.</li>
-            <li>Quisque aliquam cursus urna, non bibendum massa viverra eget.</li>
-            <li>Vivamus maximus ultricies pulvinar.</li>
-        </ol>
-        <blockquote>Ut venenatis, nisl scelerisque sollicitudin fermentum, quam libero hendrerit ipsum, ut blandit est
-            tellus sit amet turpis.</blockquote>
-        <p>Quisque at semper enim, eu hendrerit odio. Etiam auctor nisl et <em>justo sodales</em> elementum. Maecenas
-            ultrices lacus quis neque consectetur, et lobortis nisi molestie.</p>
-        <p>Sed sagittis enim ac tortor maximus rutrum. Nulla facilisi. Donec mattis vulputate risus in luctus. Maecenas
-            vestibulum interdum commodo.</p>
-        <dl>
-            <dt>Web</dt>
-            <dd>The part of the Internet that contains websites and web pages</dd>
-            <dt>HTML</dt>
-            <dd>A markup language for creating web pages</dd>
-            <dt>CSS</dt>
-            <dd>A technology to make HTML look better</dd>
-        </dl>
-        <p>Suspendisse egestas sapien non felis placerat elementum. Morbi tortor nisl, suscipit sed mi sit amet, mollis
-            malesuada nulla. Nulla facilisi. Nullam ac erat ante.</p>
-        <h4>Fourth level</h4>
-        <p>Nulla efficitur eleifend nisi, sit amet bibendum sapien fringilla ac. Mauris euismod metus a tellus laoreet,
-            at elementum ex efficitur.</p>
+        <figure>
+            <img src="images/server.jpg" class="image" style="max-height: 400px;">
+            <figcaption>
+                Jak by váš server mohl vypadat
+            </figcaption>
+        </figure>
+        <h2 id="návod">Návod</h2>
+        <h3 id="1-vyberte-si-server">1. Vyberte si server</h3>
+        <p>Pro Minecraft existuje velké množství různých serverů, drtivá většina z nich založených na oficiálním
+            Minecraftovém serveru napsaném v Javě. Většina těch, které na oficiálním serveru založené nejsou jsou
+            nekompletní nebo zastaralé, většinou používané ve velmi technicky náročných scénářích, se kterými se
+            pravděpodobně nesetkáte, proto se o nich v tomto tutoriálu nebudu zmiňovat.</p>
+        <p>Než ale začneme, musíte se rozhodnout zdali chcete aby se mohli připojit hráči s oficiálním, neupraveným
+            klientem Minecraftu, nebo zdali chcete hrát s modifikacemi, které nejde implementovat čistě na serveru.
+            Instalací modifikací ztratíte část potenciálních hráčů, kteří si použité modifikace nebudou ochotní
+            nainstalovat, ale umožní vám si server více do hloubky přizpůsobit. Pro hraní s modifikacemi, které jsou
+            nekompatibilní s oficiálním Minecraftem jsou vhodné následující servery:</p>
+        <ul>
+            <li>Forge - Načítač modifikací s dlouhou historií a velkou knihovnou modifikací, ale typicky pomalejším
+                výkonem než oficiální server, zvláště u velkých modpacků, často se používá se staršími verzemi
+                Minecraftu</li>
+            <li>Fabric - Načítač modifikací nekompatibilní s Forge, napsaný tak, aby byl výkonnější než Forge a se
+                správnými modifikacemi mnohem rychlejší než i oficiální server, má menší knihovnu modifikací, většina z
+                nich pro nejnovější verzi Minecraftu</li>
+            <li>Quilt - Načítač modifikací založený na Fabric, aktuálně kompatibilní s ním, zatím se příliš nedoporučuje
+                používat, jelikož je v ranné fázi vývoje</li>
+        </ul>
+        <p>Dále existují servery, pro které není potřeba speciální klient</p>
+        <ul>
+            <li>Oficiální server Minecraftu</li>
+            <li>CraftBukkit - Jeden z prvních neoficiálních serverů (je stále aktualizovaný), zakládá se na něm Spigot,
+                Paper, Purpur a další, které jsou s ním kompatibilní, nedoporučuje se používat kvůli jeho omezenosti, na
+                rozdíl od &quot;modů&quot; je rozšiřován &quot;pluginy&quot;</li>
+            <li>Spigot - Založený na Bukkitu, rozšiřuje jej o dodatečné API, podporuje většinu pluginů</li>
+            <li>Paper - Modifikace Spigotu s cílem většího výkonu a bezpečnosti, přidává další API, může být
+                problematický pokud jde o perfektní kompatibilitu s oficiálním minecraftem (opravuje některé chyby na
+                kterých závisí některé redstonové stroje)</li>
+            <li>Purpur - Další rozšíření Paperu o další API s ještě agresivnějšími optimalizacemi</li>
+        </ul>
+
         <pre>
       &lt;!DOCTYPE html&gt;
       &lt;html&gt;
@@ -150,13 +133,7 @@
         <p>Aliquam sagittis rhoncus vulputate. Cras non luctus sem, sed tincidunt ligula. Vestibulum at nunc elit.
             Praesent aliquet ligula mi, in luctus elit volutpat porta. Phasellus molestie diam vel nisi sodales, a
             eleifend augue laoreet. Sed nec eleifend justo. Nam et sollicitudin odio.</p>
-        <figure>
-            <img src="images/bubu.svg" class="image is-128x128">
-            <img src="images/bubu.svg" class="image is-128x128">
-            <figcaption>
-                Figure 1: Some beautiful placeholders
-            </figcaption>
-        </figure>
+
         <h6>Sixth level</h6>
         <p>Cras in nibh lacinia, venenatis nisi et, auctor urna. Donec pulvinar lacus sed diam dignissim, ut eleifend
             eros accumsan. Phasellus non tortor eros. Ut sed rutrum lacus. Etiam purus nunc, scelerisque quis enim
@@ -167,7 +144,8 @@
 <footer class="footer">
     <div class="content has-text-centered">
         <p>
-            <strong>Minecraft server tutorial</strong> by <a href="https://github.com/JDX0">Jan Josefik</a>, <a href="https://github.com/JDX0">Tadeáš Erban</a> and <a href="https://github.com/JDX0">Tomáš Lesa</a>.
+            <strong>Minecraft server tutorial</strong> by <a href="https://github.com/JDX0">Jan Josefik</a>, <a
+                href="https://github.com/JDX0">Tadeáš Erban</a> and <a href="https://github.com/JDX0">Tomáš Lesa</a>.
     </div>
 </footer>
 
