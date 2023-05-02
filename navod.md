@@ -21,8 +21,11 @@ Než ale začneme, musíte se rozhodnout zdali chcete aby se mohli připojit hr�
 
 Dále existují servery, pro které není potřeba speciální klient
 
-- Oficiální server Minecraftu
+- Oficiální server Minecraftu - Nedoporučuje se používat kvůli špatnému výkonu, telemetrii, špatné rozšiřitelnosti a funkcím reportování hráčů
 - CraftBukkit - Jeden z prvních neoficiálních serverů (je stále aktualizovaný), zakládá se na něm Spigot, Paper, Purpur a další, které jsou s ním kompatibilní, nedoporučuje se používat kvůli jeho omezenosti, na rozdíl od "modů" je rozšiřován "pluginy"
 - Spigot - Založený na Bukkitu, rozšiřuje jej o dodatečné API, podporuje většinu pluginů
 - Paper - Modifikace Spigotu s cílem většího výkonu a bezpečnosti, přidává další API, může být problematický pokud jde o perfektní kompatibilitu s oficiálním minecraftem (opravuje některé chyby na kterých závisí některé redstonové stroje)
 - Purpur - Další rozšíření Paperu o další API s ještě agresivnějšími optimalizacemi
+- Fabric - Pokud použijete pouze serverové modifikace, kterých je pro Fabric velké množství, můžete dosáhnout velkých výkonů na serveru, který je velmi kompatibilní s oficiálním serverem, lze jednoduše zamaskovat jako oficiální server
+
+Ve chvíli co jste si vybrali server, který chcete je potřeba stáhnout si jeho serverový .jar soubor. Tyto soubory lze typicky stáhnout z jejich oficiálních stránek, až na Spigot
