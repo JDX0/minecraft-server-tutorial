@@ -15,17 +15,17 @@ Pro Minecraft existuje velké množství různých serverů, drtivá většina z
 
 Než ale začneme, musíte se rozhodnout zdali chcete aby se mohli připojit hráči s oficiálním, neupraveným klientem Minecraftu, nebo zdali chcete hrát s modifikacemi, které nejde implementovat čistě na serveru. Instalací modifikací ztratíte část potenciálních hráčů, kteří si použité modifikace nebudou ochotní nainstalovat, ale umožní vám si server více do hloubky přizpůsobit. Pro hraní s modifikacemi, které jsou nekompatibilní s oficiálním Minecraftem jsou vhodné následující servery:
 
-- Forge - Načítač modifikací s dlouhou historií a velkou knihovnou modifikací, ale typicky pomalejším výkonem než oficiální server, zvláště u velkých modpacků, často se používá se staršími verzemi Minecraftu
-- Fabric - Načítač modifikací nekompatibilní s Forge, napsaný tak, aby byl výkonnější než Forge a se správnými modifikacemi mnohem rychlejší než i oficiální server, má menší knihovnu modifikací, většina z nich pro nejnovější verzi Minecraftu
-- Quilt - Načítač modifikací založený na Fabric, aktuálně kompatibilní s ním, zatím se příliš nedoporučuje používat, jelikož je v ranné fázi vývoje
+- [Forge](https://files.minecraftforge.net/net/minecraftforge/forge/) - Načítač modifikací s dlouhou historií a velkou knihovnou modifikací, ale typicky pomalejším výkonem než oficiální server, zvláště u velkých modpacků, často se používá se staršími verzemi Minecraftu
+- [Fabric](https://fabricmc.net/) - Načítač modifikací nekompatibilní s Forge, napsaný tak, aby byl výkonnější než Forge a se správnými modifikacemi mnohem rychlejší než i oficiální server, má menší knihovnu modifikací, většina z nich pro nejnovější verzi Minecraftu
+- [Quilt](https://quiltmc.org/en/) - Načítač modifikací založený na Fabric, aktuálně kompatibilní s ním, zatím se příliš nedoporučuje používat, jelikož je v ranné fázi vývoje
 
 Dále existují servery, pro které není potřeba speciální klient
 
-- Oficiální server Minecraftu - Nedoporučuje se používat kvůli špatnému výkonu, telemetrii, špatné rozšiřitelnosti a funkcím reportování hráčů
-- CraftBukkit - Jeden z prvních neoficiálních serverů (je stále aktualizovaný), zakládá se na něm Spigot, Paper, Purpur a další, které jsou s ním kompatibilní, nedoporučuje se používat kvůli jeho omezenosti, na rozdíl od "modů" je rozšiřován "pluginy"
-- Spigot - Založený na Bukkitu, rozšiřuje jej o dodatečné API, podporuje většinu pluginů
-- Paper - Modifikace Spigotu s cílem většího výkonu a bezpečnosti, přidává další API, může být problematický pokud jde o perfektní kompatibilitu s oficiálním minecraftem (opravuje některé chyby na kterých závisí některé redstonové stroje)
-- Purpur - Další rozšíření Paperu o další API s ještě agresivnějšími optimalizacemi
-- Fabric - Pokud použijete pouze serverové modifikace, kterých je pro Fabric velké množství, můžete dosáhnout velkých výkonů na serveru, který je velmi kompatibilní s oficiálním serverem, lze jednoduše zamaskovat jako oficiální server
+- [Oficiální server Minecraftu](https://www.minecraft.net/en-us/download/server) - Nedoporučuje se používat kvůli špatnému výkonu, telemetrii, špatné rozšiřitelnosti a funkcím reportování hráčů
+- Bukkit - Jeden z prvních neoficiálních serverů (už neaktualizovaný), zakládá se na něm Spigot, Paper, Purpur a další, které jsou s ním kompatibilní, nedoporučuje se používat kvůli jeho zastaralosti a omezenosti, na rozdíl od "modů" je rozšiřován "pluginy"
+- [Spigot](https://www.spigotmc.org/) - Založený na Bukkitu, rozšiřuje jej o dodatečné API, podporuje většinu pluginů
+- [Paper](https://papermc.io/) - Modifikace Spigotu s cílem většího výkonu a bezpečnosti, přidává další API, může být problematický pokud jde o perfektní kompatibilitu s oficiálním Minecraftem (opravuje některé chyby na kterých závisí některé redstonové stroje)
+- [Purpur](https://purpurmc.org/) - Další rozšíření Paperu o další API s ještě agresivnějšími optimalizacemi
+- [Fabric](https://fabricmc.net/) a [Quilt](https://quiltmc.org/en/) - Pokud použijete pouze serverové modifikace, kterých je pro Fabric a Quilt velké množství, můžete dosáhnout velkých výkonů na serveru, který je velmi kompatibilní s oficiálním serverem, lze jednoduše zamaskovat jako oficiální server
 
 Ve chvíli co jste si vybrali server, který chcete je potřeba stáhnout si jeho serverový .jar soubor. Tyto soubory lze typicky stáhnout z jejich oficiálních stránek, až na Spigot
