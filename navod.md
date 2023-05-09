@@ -40,8 +40,12 @@ Dále nabízí mnoho firem upravené verze OpenJDK s podporou srovnatelnou nebo 
 
 ### GNU/Linux
 
-Většina distribucí Linuxu nabízí OpenJDK ve svých oficiálních repozitářích. Je proto vhodné nainstalovat OpenJDK ze svého oficiálního repozitáře. Níže jsou příkazy pro různé 
+Většina distribucí Linuxu nabízí OpenJDK ve svých oficiálních repozitářích. Je proto vhodné nainstalovat OpenJDK ze svého oficiálního repozitáře. Níže jsou příkazy pro různé z nich:
 
 - Debian, Ubuntu: `sudo apt install openjdk-17-jdk`
 - Arch Linux: `tohle napíše honza`
 - Fedora: `sudo dnf install java-17-openjdk-devel.x86_64`
+
+### Windows
+
+
