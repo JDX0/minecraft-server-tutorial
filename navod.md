@@ -1,6 +1,6 @@
 # Předpoklady
 
-- Fyzický počítač nebo VPS s operačním systémem Windows, GNU/Linux, MacOS, FreeBSD, OpenBSD nebo Androidem
+- Fyzický počítač nebo VPS s operačním systémem Windows, GNU/Linux, Mac OS, FreeBSD, OpenBSD nebo Androidem
 - Nejlépe alespoň 4GB RAM a procesor s dobrým jednojádrovým výkonem
 - Rychlé připojení k internetu v obou směrech (nejlépe alespoň 50MB/s)
 - Přístup k nastavení routeru (není nutné u VPS)
@@ -46,6 +46,18 @@ Většina distribucí Linuxu nabízí OpenJDK ve svých oficiálních repozitá�
 - Arch Linux: `tohle napíše honza`
 - Fedora: `sudo dnf install java-17-openjdk-devel.x86_64`
 
+Dále pokud nemáte root přístup k vašemu operačnímu systému, můžete stáhnout a rozbalit Javu do vaší domovské složky z .tar.gz archivu. Jelikož se nedoporučuje stahovat verzi přímo od Oracle, v tomto tutoriálu můžete použít [Adoptium JDK](https://adoptium.net/temurin/releases/).
+
 ### Windows
 
+Jelikož se nedoporučuje stahovat verzi přímo od Oracle, v tomto tutoriálu můžete použít [Adoptium JDK](https://adoptium.net/temurin/releases/). Stránka nabízí .msi instalátor pro systémovou instalaci (doporučuje se použít, pokud máte administrátorské práva) nebo soubor .zip obsahující všechny soubory, které můžete rozbalit do domovského adresáře.
 
+### Mac OS
+
+Pokud používáte balíčkový systém [Homebrew](https://brew.sh/), stačí použít příkaz `brew install openjdk@17`, případně pro instalaci Homebrew příkaz `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
+
+Pokud nechcete používat Homebrew, můžete nainstalovat z [Adoptium JDK](https://adoptium.net/temurin/releases/) soubory .pkg pro systémovou instalaci a .tar.gz, který můžete rozbalit do domovského adresáře v systémech, na kterých nemáte administrátorský přístup.
+
+### Android
+
+VAROVÁNÍ: I když Android technicky podporuje instalaci Javy a Minecraft Java serveru, výkon většiny Androidových zařízení není dostatečný pro jeho plynulý výkon.
