@@ -35,7 +35,9 @@
         <ul>
             <li>Fyzický počítač nebo VPS s operačním systémem Windows, GNU/Linux, MacOS, FreeBSD, OpenBSD nebo Androidem
             </li>
-            <blockquote>VPS je Virtuální Privátní Server. Ten běží na fyzickém počítače v datovém centru, ale dělí se o obrovský výkon s ostatními virtuálními servery. Každý uživatel tak má část prostředků, které fyzický server nabízí.</blockquote>
+            <blockquote>VPS je Virtuální Privátní Server. Ten běží na fyzickém počítače v datovém centru, ale dělí se o
+                obrovský výkon s ostatními virtuálními servery. Každý uživatel tak má část prostředků, které fyzický
+                server nabízí.</blockquote>
             <li>Nejlépe alespoň 4GB RAM a procesor s dobrým jednojádrovým výkonem</li>
             <li>Rychlé připojení k internetu v obou směrech (nejlépe alespoň 50MB/s)</li>
             <li>Přístup k nastavení routeru (není nutné u VPS)</li>
@@ -46,8 +48,8 @@
                 Jak by váš server mohl vypadat
             </figcaption>
         </figure>
-        <h2 id="návod">Návod</h2>
         <h3 id="1-vyberte-si-server">1. Vyberte si server</h3>
+        <h2 id="návod">Návod</h2>
         <p>Pro Minecraft existuje velké množství různých serverů, drtivá většina z nich založených na oficiálním
             Minecraftovém serveru napsaném v Javě. Většina těch, které na oficiálním serveru založené nejsou jsou
             nekompletní nebo zastaralé, většinou používané ve velmi technicky náročných scénářích, se kterými se
@@ -58,26 +60,60 @@
             nainstalovat, ale umožní vám si server více do hloubky přizpůsobit. Pro hraní s modifikacemi, které jsou
             nekompatibilní s oficiálním Minecraftem jsou vhodné následující servery:</p>
         <ul>
-            <li>Forge - Načítač modifikací s dlouhou historií a velkou knihovnou modifikací, ale typicky pomalejším
-                výkonem než oficiální server, zvláště u velkých modpacků, často se používá se staršími verzemi
-                Minecraftu</li>
-            <li>Fabric - Načítač modifikací nekompatibilní s Forge, napsaný tak, aby byl výkonnější než Forge a se
-                správnými modifikacemi mnohem rychlejší než i oficiální server, má menší knihovnu modifikací, většina z
-                nich pro nejnovější verzi Minecraftu</li>
-            <li>Quilt - Načítač modifikací založený na Fabric, aktuálně kompatibilní s ním, zatím se příliš nedoporučuje
-                používat, jelikož je v ranné fázi vývoje</li>
+            <li><a href="https://files.minecraftforge.net/net/minecraftforge/forge/">Forge</a> - Načítač modifikací s
+                dlouhou historií a velkou knihovnou modifikací, ale typicky pomalejším výkonem než oficiální server,
+                zvláště u velkých modpacků, často se používá se staršími verzemi Minecraftu</li>
+            <li><a href="https://fabricmc.net/">Fabric</a> - Načítač modifikací nekompatibilní s Forge, napsaný tak, aby
+                byl výkonnější než Forge a se správnými modifikacemi mnohem rychlejší než i oficiální server, má menší
+                knihovnu modifikací, většina z nich pro nejnovější verzi Minecraftu</li>
+            <li><a href="https://quiltmc.org/en/">Quilt</a> - Načítač modifikací založený na Fabric, aktuálně
+                kompatibilní s ním, zatím se příliš nedoporučuje používat, jelikož je v ranné fázi vývoje</li>
         </ul>
         <p>Dále existují servery, pro které není potřeba speciální klient</p>
         <ul>
-            <li>Oficiální server Minecraftu</li>
-            <li>CraftBukkit - Jeden z prvních neoficiálních serverů (je stále aktualizovaný), zakládá se na něm Spigot,
-                Paper, Purpur a další, které jsou s ním kompatibilní, nedoporučuje se používat kvůli jeho omezenosti, na
-                rozdíl od &quot;modů&quot; je rozšiřován &quot;pluginy&quot;</li>
-            <li>Spigot - Založený na Bukkitu, rozšiřuje jej o dodatečné API, podporuje většinu pluginů</li>
-            <li>Paper - Modifikace Spigotu s cílem většího výkonu a bezpečnosti, přidává další API, může být
-                problematický pokud jde o perfektní kompatibilitu s oficiálním minecraftem (opravuje některé chyby na
-                kterých závisí některé redstonové stroje)</li>
-            <li>Purpur - Další rozšíření Paperu o další API s ještě agresivnějšími optimalizacemi</li>
+            <li><a href="https://www.minecraft.net/en-us/download/server">Oficiální server Minecraftu</a> - Nedoporučuje
+                se používat kvůli špatnému výkonu, telemetrii, špatné rozšiřitelnosti a funkcím reportování hráčů</li>
+            <li>Bukkit - Jeden z prvních neoficiálních serverů (už neaktualizovaný), zakládá se na něm Spigot, Paper,
+                Purpur a další, které jsou s ním kompatibilní, nedoporučuje se používat kvůli jeho zastaralosti a
+                omezenosti, na rozdíl od &quot;modů&quot; je rozšiřován &quot;pluginy&quot;</li>
+            <li><a href="https://www.spigotmc.org/">Spigot</a> - Založený na Bukkitu, rozšiřuje jej o dodatečné API,
+                podporuje většinu dostupných pluginů</li>
+            <li><a href="https://papermc.io/">Paper</a> - Modifikace Spigotu s cílem většího výkonu a bezpečnosti,
+                přidává další API, může být problematický pokud jde o perfektní kompatibilitu s oficiálním Minecraftem
+                (opravuje některé chyby na kterých závisí některé redstonové stroje)</li>
+            <li><a href="https://purpurmc.org/">Purpur</a> - Další rozšíření Paperu o další API s ještě agresivnějšími
+                optimalizacemi</li>
+            <li><a href="https://fabricmc.net/">Fabric</a> a <a href="https://quiltmc.org/en/">Quilt</a> - Pokud
+                použijete pouze serverové modifikace, kterých je pro Fabric a Quilt velké množství, můžete dosáhnout
+                velkých výkonů na serveru, který je velmi kompatibilní s oficiálním serverem, lze také jednoduše
+                zamaskovat jako oficiální server</li>
+            <li><a href="https://spongepowered.org/">Sponge</a> - Alternativní server s API pro pluginy, které je
+                modernější, ale nekompatibilní s žádným jiným načítačem pluginů, proto má menší knihovnu</li>
+        </ul>
+        <p>Ve chvíli co jste si vybrali server, který chcete je potřeba stáhnout si jeho serverový .jar soubor. Tyto
+            soubory lze typicky stáhnout z jejich oficiálních stránek, až na Spigot, který kvůli obavám z autorských
+            práv vyžaduje aby si každý uživatel <a href="#">sám sestavil Spigot</a>.</p>
+        <h2 id="nainstalujte-javu">Nainstalujte Javu</h2>
+        <p>Jelikož je Minecraft program založený na Javě, je potřeba nainstalovat Javu na počítač, který bude server
+            spouštět. Toto není tak jednoduché, jak by se mohlo zdát, jelikož existuje mnoho variant Javy. Dvě hlavní
+            jsou ty vyráběné od Oracle:</p>
+        <ul>
+            <li><a href="https://www.java.com/en/">Java SE</a> - původní, nesvobodná, ale bezplatná verze Javy, tuto
+                verzi má nainstalovanou většina uživatelů Windows, má delší dobu podpory než OpenJDK</li>
+            <li><a href="https://openjdk.org/">OpenJDK</a> - výkonově a funkčně téměř identická verze Javy pod svobodnou
+                licencí, rovněž bezplatná, tuto verzi používá oficiální Minecraftový spouštěč</li>
+        </ul>
+        <p>Dále nabízí mnoho firem upravené verze OpenJDK s podporou srovnatelnou nebo delší než Java SE. Pro tento
+            návod je jedno, kterou variantu využijete, ale ideálně nainstalujte pro servery pro novější verzi Minecraftu
+            verzi 17, jelikož pro tuto verzi je Minecraft navržen a je dlouhodobě podporovaná. V tomto návodu si ukážeme
+            jak nainstalovat OpenJDK. Tato instalace je ale jiná pro každý operační systém.</p>
+        <h3 id="gnulinux">GNU/Linux</h3>
+        <p>Většina distribucí Linuxu nabízí OpenJDK ve svých oficiálních repozitářích. Je proto vhodné nainstalovat
+            OpenJDK ze svého oficiálního repozitáře. Níže jsou příkazy pro různé </p>
+        <ul>
+            <li>Debian, Ubuntu: <code>sudo apt install openjdk-17-jdk</code></li>
+            <li>Arch Linux: <code>sudo pacman -S jdk17-openjdk</code></li>
+            <li>Fedora: <code>sudo dnf install java-17-openjdk-devel.x86_64</code></li>
         </ul>
 
         <pre>
