@@ -40,10 +40,10 @@ Dále nabízí mnoho firem upravené verze OpenJDK s podporou srovnatelnou nebo 
 
 ### GNU/Linux
 
-Většina distribucí Linuxu nabízí OpenJDK ve svých oficiálních repozitářích. Je proto vhodné nainstalovat OpenJDK ze svého oficiálního repozitáře. Níže jsou příkazy pro různé z nich:
+Většina distribucí GNU/Linuxu nabízí OpenJDK ve svých oficiálních repozitářích. Je proto vhodné nainstalovat OpenJDK ze svého oficiálního repozitáře. Níže jsou příkazy pro různé z nich:
 
 - Debian, Ubuntu: `sudo apt install openjdk-17-jdk`
-- Arch Linux: `tohle napíše honza`
+- Arch Linux: `sudo pacman -S jdk17-openjdk`
 - Fedora: `sudo dnf install java-17-openjdk-devel.x86_64`
 
 Dále pokud nemáte root přístup k vašemu operačnímu systému, můžete stáhnout a rozbalit Javu do vaší domovské složky z .tar.gz archivu. Jelikož se nedoporučuje stahovat verzi přímo od Oracle, v tomto tutoriálu můžete použít [Adoptium JDK](https://adoptium.net/temurin/releases/).
@@ -61,3 +61,9 @@ Pokud nechcete používat Homebrew, můžete nainstalovat z [Adoptium JDK](https
 ### Android
 
 VAROVÁNÍ: I když Android technicky podporuje instalaci Javy a Minecraft Java serveru, výkon většiny Androidových zařízení není dostatečný pro jeho plynulý výkon.
+
+Jelikož výchozí Android neobsahuje prostředí pro instalaci Javy kompatibilní s OpenJDK, musíme do zařízení toto rozumné prostředí nainstalovat. V tomto návodu použijeme Termux. [Na této stránce](https://github.com/termux/termux-app/releases) najděte nejnovější verzi Termuxu (tu nahoře) a vyberte verzi s vaším ABI. Pokud nevíte co ABI znamená, nevadí, můžete buď stáhnout větší verzi "universal", která bude fungovat na všech zařízeních podporovaných Termuxem, můžete si tipnout, že vaše ABI bude arm64 (na většině telefonů a tabletů jsou ARM čipy), nebo si stáhnout jednu z mnoha "CPU info" aplikací, která vám tuto informaci řekne.
+
+Jakmile budete mít soubor stažený, otevřete jej v instalátoru aplikací a nainstalujte ji. Je pravděpodobné, že si Android bude stěžovat na instalaci aplikací z neznámého zdroje, toto povolte. Jelikož je proces povolování instalace neznámých aplikací na různých zařízeních a různých verzích Androidu jiný, nebudu jej vysvětlovat.
+
+Až budete mít na zařízení Termux nainstalovaný, otevřete jej a počkejte než stáhne svůj souborový systém. Až dokončí práci, měli by jste se nacházet na obrazovce s terminálem. V tuto chvíli můžete zadat příkaz `pkg i openjdk-17`. V tuto chvíli by měla být Java nainstalovaná.
