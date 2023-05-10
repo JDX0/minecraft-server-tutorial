@@ -66,4 +66,8 @@ Jelikož výchozí Android neobsahuje prostředí pro instalaci Javy kompatibiln
 
 Jakmile budete mít soubor stažený, otevřete jej v instalátoru aplikací a nainstalujte ji. Je pravděpodobné, že si Android bude stěžovat na instalaci aplikací z neznámého zdroje, toto povolte. Jelikož je proces povolování instalace neznámých aplikací na různých zařízeních a různých verzích Androidu jiný, nebudu jej vysvětlovat.
 
-Až budete mít na zařízení Termux nainstalovaný, otevřete jej a počkejte než stáhne svůj souborový systém. Až dokončí práci, měli by jste se nacházet na obrazovce s terminálem. V tuto chvíli můžete zadat příkaz `pkg i openjdk-17`. V tuto chvíli by měla být Java nainstalovaná.
+Až budete mít na zařízení Termux nainstalovaný, otevřete jej a počkejte než stáhne svůj souborový systém. Až dokončí práci, měli by jste se nacházet na obrazovce s terminálem. V tuto chvíli můžete zadat příkaz `pkg i openjdk-17`, který nainstaluje Javu.
+
+### FreeBSD
+
+### OpenBSD
