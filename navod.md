@@ -29,7 +29,7 @@ Dále existují servery, pro které není potřeba speciální klient
 
 Ve chvíli co jste si vybrali server, který chcete je potřeba stáhnout si jeho serverový .jar soubor. Tyto soubory lze typicky stáhnout z jejich oficiálních stránek, až na Spigot, který kvůli obavám z autorských práv vyžaduje aby si každý uživatel [sám sestavil Spigot](#).
 
-## Nainstalujte Javu
+## 2. Nainstalujte Javu
 
 Jelikož je Minecraft program založený na Javě, je potřeba nainstalovat Javu na počítač, který bude server spouštět. Toto není tak jednoduché, jak by se mohlo zdát, jelikož existuje mnoho variant Javy. Dvě hlavní jsou ty vyráběné od Oracle:
 
@@ -46,6 +46,12 @@ Většina distribucí GNU/Linuxu nabízí OpenJDK ve svých oficiálních repozi
 - Arch Linux: `sudo pacman -S jdk17-openjdk`
 - Fedora: `sudo dnf install java-17-openjdk-devel.x86_64`
 
+Dříve, než tak ale učiníte je dobré aktualizovat repozitáře a systém pomocí příkazů, které se liší pro každou distribuci:
+
+- Debian, Ubuntu: `sudo apt update && sudo apt upgrade`
+- Arch Linux: `sudo pacman -Syu`
+- Fedora: `sudo dnf upgrade`
+
 Dále pokud nemáte root přístup k vašemu operačnímu systému, můžete stáhnout a rozbalit Javu do vaší domovské složky z .tar.gz archivu. Jelikož se nedoporučuje stahovat verzi přímo od Oracle, v tomto tutoriálu můžete použít [Adoptium JDK](https://adoptium.net/temurin/releases/).
 
 ### Windows
@@ -55,6 +61,8 @@ Jelikož se nedoporučuje stahovat verzi přímo od Oracle, v tomto tutoriálu m
 ### Mac OS
 
 Pokud používáte balíčkový systém [Homebrew](https://brew.sh/), stačí použít příkaz `brew install openjdk@17`, případně pro instalaci Homebrew příkaz `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
+
+Pokud ale již máte Homebrew nainstalovaný, doporučujeme předem vše aktualizovat pomocí příkazu `brew upgrade`
 
 Pokud nechcete používat Homebrew, můžete nainstalovat z [Adoptium JDK](https://adoptium.net/temurin/releases/) soubory .pkg pro systémovou instalaci a .tar.gz, který můžete rozbalit do domovského adresáře v systémech, na kterých nemáte administrátorský přístup.
 
@@ -70,6 +78,22 @@ Až budete mít na zařízení Termux nainstalovaný, otevřete jej a počkejte 
 
 ### FreeBSD
 
-
+FreeBSD nabízí OpenJDK ve svých repozitářích a proto se doporučuje nainstalovat příkazem `pkg install -y openjdk17`. Než tak ale učiníte, použijte příkaz `pkg update && pkg upgrade` k aktualizaci systému.
 
 ### OpenBSD
+
+Pokud používáte OpenBSD, zřejmě umíte taky nainstalovat OpenJDK.
+
+## 3. Zkontrolujte instalaci Javy
+
+Než budeme pokračovat, doporučujeme v terminálu vyzkoušet příkaz `java --version`. Pokud vám tento příkaz vrací užitečné informace, dokončili jste proces instalace správně. Pokud příkaz nebyl nalezen i přes dodržení návodu, znamená to, že nemáte instalaci Javy v proměnné prostředí `PATH`.
+
+## 4. Stáhněte si server
+
+V sekci 1. jste si vybrali minecraftový server, který chcete používat. Nyní, pokud jste si nevybrali Spigot, otevřete webovou stránku, na kterou tento návod odkazuje a stáhněte verzi serveru (bývá ve formátu Java Archive - s příponou .jar), kterou chcete používat.
+
+Pokud příponu .jar nevidíte, zřejmě používáte operařní systém Windows a nemáte zapnuté zobrazování přípon.
+
+Vytvořte pak nový adresář kdekoli na počítači, kam máte přístup a právě stažený .jar soubor uložte do něj
+
+## 5. Instalace Spigotu
