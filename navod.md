@@ -106,3 +106,14 @@ Pokud vám nevadí potenciální riziko a možná zastaralost sestavení Spigotu
 1. Z [této stránky](https://hub.spigotmc.org/jenkins/job/BuildTools/lastStableBuild/artifact/target/BuildTools.jar) stáhněte nejnovější verzi sestavovacích nástrojů (BuildTools.jar). Přesuňte jej do složky, kterou jste vytvořili v minulém kroku.
 2. Ve složce, kde jste soubor přesunuli, spusťte příkaz `java -jar BuildTools.jar --rev 1.19.4`, kde 1.19.4 nahraďte verzí Minecraftu, pro kterou chcete server sestavit.
 3. Počkejte než proces dokončí práci. Tento krok může trvat několik minut, v závislosti na výkonu a rychlosti připojení k internetu vašeho počítače.
+4. Na konci tohoto procesu by ve vaší složce být soubor se jménem zhruba jako spigot-1.19.4.jar. Tento soubor doporučujeme přejmenovat na server.jar, kvůli zbytku tutoriálu.
+
+## Spouštění serveru
+
+V tuto chvíli máte stažený Minecraftový server, jeho spouštění ale není tak jednoduché, jako dvojklik, jelikož je nutné vytvořit skript, který ho spustí s parametry vhodnými pro počítač, který jej bude spouštět.
+
+V závislosti na operačním systému bude mít skript jinou příponu, pro Windows vytvořte soubor start.bat a pro ostatní systémy vytvořte soubor start.sh. Nyní otevřete tento soubor v rozumném textovém editoru pro planý text (ne Word) pro váš operační systém.
+
+Do tohoto souboru vložte příkaz ve tvaru `java -Xms16G -Xmx16G -jar server.jar nogui`, kdy nahraďíte 16G počtem gigabytů paměti, kterou jste ochotní svému serveru přidělit a server.jar názvem souboru serveru, doporučujeme ale použít minimálně 4.
+
+Pokud používáte Windows, můžete nyní spustit tento skript spuštěním příkazu `start` ve složce, ve které se nachází, nebo dvojklikem na něj. Pokud používáte jakýkoli jiný operační systém v tomto návodu, musíte ještě umožnit spuštění tohoto skriptu pomocí příkazu `chmod +x start.sh` a spouštět ho pak pomocí příkazu `./start.sh` ve složce, kde se soubor start.sh nachází.
