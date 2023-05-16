@@ -202,8 +202,18 @@ V tomto souboru je několik položek, které je vhodné upravit, než server spu
 
 ## 8. Připojte se k serveru
 
-Pokud spouštíte server na vlastním počítači, můžete v Minecraftu vytvořit nový server s adresou localhost a připojit se na něj. Pokud ale server spouštíte na jiném počítači ve stejné síti, bude potřeba zadat do této kolonky jeho IP adresu.
+Pokud spouštíte server na vlastním počítači, můžete v Minecraftu vytvořit nový server s adresou localhost a připojit se na něj. Pokud ale server spouštíte na jiném počítači ve stejné síti, bude potřeba zadat do této kolonky jeho IP adresu. Příkazy k zjištění IP adresy a adresy routeru na počítači na počítači se bude lišit podle operačního systému.
+
+- Windows a Mac OS: `ipconfig`
+- GNU/Linux a Termux/Android: `ip a`
+- FreeBSD a OpenBSD: `ifconfig`
 
 ## 9. Umožněte připojení se k serveru z internetu
 
-V tuto chvíli se můžete připojit k serveru pomocí vlastního počítače a pomocí počítačů ve stejné síti jako vy. Pokud vám to stačí, můžete nyní přestat a začít hrát. V opačném případě budete potřebovat 
+V tuto chvíli se můžete připojit k serveru pomocí vlastního počítače a pomocí počítačů ve stejné síti jako vy. Pokud vám to stačí, můžete nyní přestat a začít hrát. V opačném případě budete muset nakonfigurovat router, aby svoje připojení přesměrovával na váš počítač. Tato konfigurace je pro každý router jiná, ale typicky zahrnuje tyto kroky:
+
+- Na většině domácích routerů stačí zadat IP adresu routeru zjištěnou příkazy v sekci 8 do webového prohlížeče, pokud používáte některý z firemních routerů, postupy mohou být jiné, v tomto případě doporučujeme kontaktovat správce vaší sítě (v takovém případě nepokračujte dále v této sekci).
+- Nalezněte sekci s názvem přesměrování protů, port forwarding nebo předávání.
+- Přidejte do tabulky předávání IP adresu vašeho počítače a jako port vzdálený i soukromý použijte 25565, pokud jste ho v sekci 7 nezměnili
+- Zjištěte veřejnou adresu svého počítače (Váš vyhledávač vám vyhledá několik stránek, které vám vaši IP adresu řeknou, případně můžete navštívit [checkip.amazonaws.com](https://checkip.amazonaws.com/))
+- Připojte se na tuto veřejnou IP adresu
