@@ -99,7 +99,7 @@ Vytvořte pak nový adresář kdekoli na počítači, kam máte přístup a prá
 
 Pokud používáte Spigot, uložte do této složky soubor BuildTools.jar, o kterém se mluví více v další sekci.
 
-## 5. Instalace Spigotu
+## 5. Získejte Spigot
 
 Pokud vám nevadí potenciální riziko a možná zastaralost sestavení Spigotu, který se dá stáhnout jako jakýkoli jiný server, ale od stránek třetích stran, můžete jej stáhnout na stránkách jako např. [GetBukkit](https://getbukkit.org/). Spigot totiž od originálních vývojářů nedostanete ve spustitelné formě, ale jako sérii záplat pro oficiální server. Pokud těmto stránkách nevěříte, nebo chcete verzi Spigotu, kterou tyto stránky nenabízejí, můžete udělat tyto kroky:
 
@@ -108,7 +108,7 @@ Pokud vám nevadí potenciální riziko a možná zastaralost sestavení Spigotu
 3. Počkejte než proces dokončí práci. Tento krok může trvat několik minut, v závislosti na výkonu a rychlosti připojení k internetu vašeho počítače.
 4. Na konci tohoto procesu by ve vaší složce být soubor se jménem zhruba jako spigot-1.19.4.jar. Tento soubor doporučujeme přejmenovat na server.jar, kvůli zbytku tutoriálu.
 
-## Spouštění serveru
+## 6. Spusťte server
 
 V tuto chvíli máte stažený Minecraftový server, jeho spouštění ale není tak jednoduché, jako dvojklik, jelikož je nutné vytvořit skript, který ho spustí s parametry vhodnými pro počítač, který jej bude spouštět.
 
@@ -117,3 +117,4 @@ V závislosti na operačním systému bude mít skript jinou příponu, pro Wind
 Do tohoto souboru vložte příkaz ve tvaru `java -Xms16G -Xmx16G -jar server.jar nogui`, kdy nahraďíte 16G počtem gigabytů paměti, kterou jste ochotní svému serveru přidělit a server.jar názvem souboru serveru, doporučujeme ale použít minimálně 4.
 
 Pokud používáte Windows, můžete nyní spustit tento skript spuštěním příkazu `start` ve složce, ve které se nachází, nebo dvojklikem na něj. Pokud používáte jakýkoli jiný operační systém v tomto návodu, musíte ještě umožnit spuštění tohoto skriptu pomocí příkazu `chmod +x start.sh` a spouštět ho pak pomocí příkazu `./start.sh` ve složce, kde se soubor start.sh nachází.
+
