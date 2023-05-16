@@ -3,6 +3,32 @@
 
 <head>
     <link rel="stylesheet" href="bulma/css/bulma.css">
+    <style>
+        .logoimage {
+            max-width: 20rem;
+            max-height: 5rem;
+        }
+
+        .move {
+            position: relative;
+            animation: mymove 5s infinite;
+            z-index: 1000;
+        }
+
+        @keyframes mymove {
+            0% {
+                top: 100px;
+            }
+
+            50% {
+                top: 400px;
+            }
+
+            100% {
+                top: 100px;
+            }
+        }
+    </style>
 </head>
 <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
@@ -27,10 +53,12 @@
 </nav>
 <div class="container">
     <div class="content">
+
+        <h1 class="move" style="color: white;" id="jak-nainstalovat-minecraftový-server">Jak nainstalovat minecraftový
+            server</h1>
         <figure>
             <img src="images/mc.jpg" class="image" style="max-height: 66wh;">
         </figure>
-        <h1 id="jak-nainstalovat-minecraftový-server">Jak nainstalovat minecraftový server</h1>
         <h2 id="předpoklady">Předpoklady</h2>
         <ul>
             <li>Fyzický počítač nebo VPS s operačním systémem Windows, GNU/Linux, MacOS, FreeBSD, OpenBSD nebo Androidem
@@ -49,7 +77,6 @@
             </figcaption>
         </figure>
         <h3 id="1-vyberte-si-server">1. Vyberte si server</h3>
-        <h2 id="návod">Návod</h2>
         <p>Pro Minecraft existuje velké množství různých serverů, drtivá většina z nich založených na oficiálním
             Minecraftovém serveru napsaném v Javě. Většina těch, které na oficiálním serveru založené nejsou jsou
             nekompletní nebo zastaralé, většinou používané ve velmi technicky náročných scénářích, se kterými se
@@ -60,12 +87,17 @@
             nainstalovat, ale umožní vám si server více do hloubky přizpůsobit. Pro hraní s modifikacemi, které jsou
             nekompatibilní s oficiálním Minecraftem jsou vhodné následující servery:</p>
         <ul>
-            <li><a href="https://files.minecraftforge.net/net/minecraftforge/forge/">Forge</a> - Načítač modifikací s
+            <img src="images/logos/logoForge.svg" class="logoimage">
+            <li>
+                <a href="https://files.minecraftforge.net/net/minecraftforge/forge/">Forge</a> - Načítač modifikací s
                 dlouhou historií a velkou knihovnou modifikací, ale typicky pomalejším výkonem než oficiální server,
-                zvláště u velkých modpacků, často se používá se staršími verzemi Minecraftu</li>
-            <li><a href="https://fabricmc.net/">Fabric</a> - Načítač modifikací nekompatibilní s Forge, napsaný tak, aby
+                zvláště u velkých modpacků, často se používá se staršími verzemi Minecraftu
+            </li><img src="images/logos/logoFabric.png" class="logoimage">
+            <li><a href="https://fabricmc.net/">Fabric</a> -
+                Načítač modifikací nekompatibilní s Forge, napsaný tak, aby
                 byl výkonnější než Forge a se správnými modifikacemi mnohem rychlejší než i oficiální server, má menší
-                knihovnu modifikací, většina z nich pro nejnovější verzi Minecraftu</li>
+                knihovnu modifikací, většina z nich pro nejnovější verzi Minecraftu</li><img
+                src="images/logos/logoQuilt.svg" class="logoimage">
             <li><a href="https://quiltmc.org/en/">Quilt</a> - Načítač modifikací založený na Fabric, aktuálně
                 kompatibilní s ním, zatím se příliš nedoporučuje používat, jelikož je v ranné fázi vývoje</li>
         </ul>
@@ -93,7 +125,7 @@
         <p>Ve chvíli co jste si vybrali server, který chcete je potřeba stáhnout si jeho serverový .jar soubor. Tyto
             soubory lze typicky stáhnout z jejich oficiálních stránek, až na Spigot, který kvůli obavám z autorských
             práv vyžaduje aby si každý uživatel <a href="#">sám sestavil Spigot</a>.</p>
-        <h2 id="nainstalujte-javu">Nainstalujte Javu</h2>
+        <h2 id="2-nainstalujte-javu">2. Nainstalujte Javu</h2>
         <p>Jelikož je Minecraft program založený na Javě, je potřeba nainstalovat Javu na počítač, který bude server
             spouštět. Toto není tak jednoduché, jak by se mohlo zdát, jelikož existuje mnoho variant Javy. Dvě hlavní
             jsou ty vyráběné od Oracle:</p>
@@ -108,73 +140,216 @@
             verzi 17, jelikož pro tuto verzi je Minecraft navržen a je dlouhodobě podporovaná. V tomto návodu si ukážeme
             jak nainstalovat OpenJDK. Tato instalace je ale jiná pro každý operační systém.</p>
         <h3 id="gnulinux">GNU/Linux</h3>
-        <p>Většina distribucí Linuxu nabízí OpenJDK ve svých oficiálních repozitářích. Je proto vhodné nainstalovat
-            OpenJDK ze svého oficiálního repozitáře. Níže jsou příkazy pro různé </p>
+        <p>Většina distribucí GNU/Linuxu nabízí OpenJDK ve svých oficiálních repozitářích. Je proto vhodné nainstalovat
+            OpenJDK ze svého oficiálního repozitáře. Níže jsou příkazy pro různé z nich:</p>
         <ul>
             <li>Debian, Ubuntu: <code>sudo apt install openjdk-17-jdk</code></li>
             <li>Arch Linux: <code>sudo pacman -S jdk17-openjdk</code></li>
             <li>Fedora: <code>sudo dnf install java-17-openjdk-devel.x86_64</code></li>
         </ul>
-
+        <p>Dříve, než tak ale učiníte je dobré aktualizovat repozitáře a systém pomocí příkazů, které se liší pro každou
+            distribuci:</p>
+        <ul>
+            <li>Debian, Ubuntu: <code>sudo apt update &amp;&amp; sudo apt upgrade</code></li>
+            <li>Arch Linux: <code>sudo pacman -Syu</code></li>
+            <li>Fedora: <code>sudo dnf upgrade</code></li>
+        </ul>
+        <p>Dále pokud nemáte root přístup k vašemu operačnímu systému, můžete stáhnout a rozbalit Javu do vaší domovské
+            složky z .tar.gz archivu. Jelikož se nedoporučuje stahovat verzi přímo od Oracle, v tomto tutoriálu můžete
+            použít <a href="https://adoptium.net/temurin/releases/">Adoptium JDK</a>.</p>
+        <h3 id="windows">Windows</h3>
+        <p>Jelikož se nedoporučuje stahovat verzi přímo od Oracle, v tomto tutoriálu můžete použít <a
+                href="https://adoptium.net/temurin/releases/">Adoptium JDK</a>. Stránka nabízí .msi instalátor pro
+            systémovou instalaci (doporučuje se použít, pokud máte administrátorské práva) nebo soubor .zip obsahující
+            všechny soubory, které můžete rozbalit do domovského adresáře.</p>
+        <h3 id="mac-os">Mac OS</h3>
+        <p>Pokud používáte balíčkový systém <a href="https://brew.sh/">Homebrew</a>, stačí použít příkaz
+            <code>brew install openjdk@17</code>, případně pro instalaci Homebrew příkaz
+            <code>/bin/bash -c &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&quot;</code>
+        </p>
+        <p>Pokud ale již máte Homebrew nainstalovaný, doporučujeme předem vše aktualizovat pomocí příkazu
+            <code>brew upgrade</code>
+        </p>
+        <p>Pokud nechcete používat Homebrew, můžete nainstalovat z <a
+                href="https://adoptium.net/temurin/releases/">Adoptium JDK</a> soubory .pkg pro systémovou instalaci a
+            .tar.gz, který můžete rozbalit do domovského adresáře v systémech, na kterých nemáte administrátorský
+            přístup.</p>
+        <h3 id="android">Android</h3>
+        <p>VAROVÁNÍ: I když Android technicky podporuje instalaci Javy a Minecraft Java serveru, výkon většiny
+            Androidových zařízení není dostatečný pro jeho plynulý výkon.</p>
+        <p>Jelikož výchozí Android neobsahuje prostředí pro instalaci Javy kompatibilní s OpenJDK, musíme do zařízení
+            toto rozumné prostředí nainstalovat. V tomto návodu použijeme Termux. <a
+                href="https://github.com/termux/termux-app/releases">Na této stránce</a> najděte nejnovější verzi
+            Termuxu (tu nahoře) a vyberte verzi s vaším ABI. Pokud nevíte co ABI znamená, nevadí, můžete buď stáhnout
+            větší verzi &quot;universal&quot;, která bude fungovat na všech zařízeních podporovaných Termuxem, můžete si
+            tipnout, že vaše ABI bude arm64 (na většině telefonů a tabletů jsou ARM čipy), nebo si stáhnout jednu z
+            mnoha &quot;CPU info&quot; aplikací, která vám tuto informaci řekne.</p>
+        <p>Jakmile budete mít soubor stažený, otevřete jej v instalátoru aplikací a nainstalujte ji. Je pravděpodobné,
+            že si Android bude stěžovat na instalaci aplikací z neznámého zdroje, toto povolte. Jelikož je proces
+            povolování instalace neznámých aplikací na různých zařízeních a různých verzích Androidu jiný, nebudu jej
+            vysvětlovat.</p>
+        <p>Až budete mít na zařízení Termux nainstalovaný, otevřete jej a počkejte než stáhne svůj souborový systém. Až
+            dokončí práci, měli by jste se nacházet na obrazovce s terminálem. V tuto chvíli můžete zadat příkaz
+            <code>pkg i -y openjdk-17</code>, který nainstaluje Javu.
+        </p>
+        <h3 id="freebsd">FreeBSD</h3>
+        <p>FreeBSD nabízí OpenJDK ve svých repozitářích a proto se doporučuje nainstalovat příkazem
+            <code>pkg install -y openjdk17</code>. Než tak ale učiníte, použijte příkaz
+            <code>pkg update &amp;&amp; pkg upgrade</code> k aktualizaci systému.
+        </p>
+        <h3 id="openbsd">OpenBSD</h3>
+        <p>Pokud používáte OpenBSD, zřejmě umíte taky nainstalovat OpenJDK.</p>
+        <h2 id="3-zkontrolujte-instalaci-javy">3. Zkontrolujte instalaci Javy</h2>
+        <p>Než budeme pokračovat, doporučujeme v terminálu vyzkoušet příkaz <code>java --version</code>. Pokud vám tento
+            příkaz vrací užitečné informace, dokončili jste proces instalace správně. Pokud příkaz nebyl nalezen i přes
+            dodržení návodu, znamená to, že nemáte instalaci Javy v proměnné prostředí <code>PATH</code>.</p>
+        <h2 id="4-stáhněte-si-server">4. Stáhněte si server</h2>
+        <p>V sekci 1. jste si vybrali minecraftový server, který chcete používat. Nyní, pokud jste si nevybrali Spigot,
+            otevřete webovou stránku, na kterou tento návod odkazuje a stáhněte verzi serveru (bývá ve formátu Java
+            Archive - s příponou .jar), kterou chcete používat.</p>
+        <p>Pokud příponu .jar nevidíte, zřejmě používáte operařní systém Windows a nemáte zapnuté zobrazování přípon. To
+            můžete zapnout na Windows 10 otevřením karty Zobrazení a zaškrknutím zaškrtávacího políčka zobrazit přípony
+            souborů. Na Windows 11 to stejné můžete najít pod tlečítkem zobrazení.</p>
+        <p>Vytvořte pak nový adresář kdekoli na počítači, kam máte přístup a právě stažený .jar soubor uložte do něj.
+            Kvůli zbytku tutoriálu doporučujeme také soubor přejmenovat na server.jar, pokud nechcete upravovat
+            spouštěcí shellový skript.</p>
+        <p>Pokud používáte Spigot, uložte do této složky soubor BuildTools.jar, o kterém se mluví více v další sekci.
+        </p>
+        <h2 id="5-instalace-spigotu">5. Instalace Spigotu</h2>
+        <p>Pokud vám nevadí potenciální riziko a možná zastaralost sestavení Spigotu, který se dá stáhnout jako jakýkoli
+            jiný server, ale od stránek třetích stran, můžete jej stáhnout na stránkách jako např. <a
+                href="https://getbukkit.org/">GetBukkit</a>. Spigot totiž od originálních vývojářů nedostanete ve
+            spustitelné formě, ale jako sérii záplat pro oficiální server. Pokud těmto stránkách nevěříte, nebo chcete
+            verzi Spigotu, kterou tyto stránky nenabízejí, můžete udělat tyto kroky:</p>
+        <ol>
+            <li>Z <a
+                    href="https://hub.spigotmc.org/jenkins/job/BuildTools/lastStableBuild/artifact/target/BuildTools.jar">této
+                    stránky</a> stáhněte nejnovější verzi sestavovacích nástrojů (BuildTools.jar). Přesuňte jej do
+                složky, kterou jste vytvořili v minulém kroku.</li>
+            <li>Ve složce, kde jste soubor přesunuli, spusťte příkaz <code>java -jar BuildTools.jar --rev 1.19.4</code>,
+                kde 1.19.4 nahraďte verzí Minecraftu, pro kterou chcete server sestavit.</li>
+            <li>Počkejte než proces dokončí práci. Tento krok může trvat několik minut, v závislosti na výkonu a
+                rychlosti připojení k internetu vašeho počítače.</li>
+        </ol>
+        <h2>Souhlas EULA</h2>
+        <p>Po prvníjm spuštění serveru se vám ve složce objeví soubor eula.txt, pokud souhlasíte s podmínkami použití
+            serveru, tak soubor otevřete v textovém editoru a "eula=false" změňte na "eula=true"</p>
+        <h2>Konfigurace</h2>
+        <p>hlavní konfigurační soubor minecraft serveru je server.properties, toto je jeho výchozí stav ve verzi 1.19.4:
+        </p>
         <pre>
-      &lt;!DOCTYPE html&gt;
-      &lt;html&gt;
-        &lt;head&gt;
-          &lt;title&gt;Hello World&lt;/title&gt;
-        &lt;/head&gt;
-        &lt;body&gt;
-          &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec viverra nec nulla vitae mollis.&lt;/p&gt;
-        &lt;/body&gt;
-      &lt;/html&gt;
+            enable-jmx-monitoring=false
+            rcon.port=25575
+            level-seed=
+            gamemode=survival
+            enable-command-block=false
+            enable-query=false
+            generator-settings={}
+            enforce-secure-profile=true
+            level-name=world
+            motd=A Minecraft Server
+            query.port=25565
+            pvp=true
+            generate-structures=true
+            max-chained-neighbor-updates=1000000
+            difficulty=easy
+            network-compression-threshold=256
+            max-tick-time=60000
+            require-resource-pack=false
+            use-native-transport=true
+            max-players=20
+            online-mode=true
+            enable-status=true
+            allow-flight=false
+            initial-disabled-packs=
+            broadcast-rcon-to-ops=true
+            view-distance=10
+            server-ip=
+            resource-pack-prompt=
+            allow-nether=true
+            server-port=25565
+            enable-rcon=false
+            sync-chunk-writes=true
+            op-permission-level=4
+            prevent-proxy-connections=false
+            hide-online-players=false
+            resource-pack=
+            entity-broadcast-range-percentage=100
+            simulation-distance=10
+            rcon.password=
+            player-idle-timeout=0
+            force-gamemode=false
+            rate-limit=0
+            hardcore=false
+            white-list=false
+            broadcast-console-to-ops=true
+            spawn-npcs=true
+            spawn-animals=true
+            function-permission-level=2
+            initial-enabled-packs=vanilla
+            level-type=minecraft\:normal
+            text-filtering-config=
+            spawn-monsters=true
+            enforce-whitelist=false
+            spawn-protection=16
+            resource-pack-sha1=
+            max-world-size=29999984
       </pre>
-        <p>Maecenas eleifend sollicitudin dui, faucibus sollicitudin augue cursus non. Ut finibus eleifend arcu ut
-            vehicula. Mauris eu est maximus est porta condimentum in eu justo. Nulla id iaculis sapien.</p>
+        <p>nejdůležitejší položky:</p>
         <table>
-            <thead>
-                <tr>
-                    <th>One</th>
-                    <th>Two</th>
-                </tr>
-            </thead>
             <tbody>
                 <tr>
-                    <td>Three</td>
-                    <td>Four</td>
+                    <td>
+                        level-seed
+                    </td>
+                    <td>
+                        Seed světa, pokud neneastavíte, vybere se náhodný
+                    </td>
                 </tr>
                 <tr>
-                    <td>Five</td>
-                    <td>Six</td>
+                    <td>gamemode</td>
+                    <td>Gamemode, který se nastaví hráči, když se na server poprvé připojí</td>
                 </tr>
                 <tr>
-                    <td>Seven</td>
-                    <td>Eight</td>
+                    <td>motd</td>
+                    <td>Text, který hráči uvidí ve seznamu serverů</td>
                 </tr>
                 <tr>
-                    <td>Nine</td>
-                    <td>Ten</td>
+                    <td>pvp</td>
+                    <td>Pokud nastavíte na false, hráči nebudou moct ostatním hráčum dávat přímé poškození</td>
                 </tr>
                 <tr>
-                    <td>Eleven</td>
-                    <td>Twelve</td>
+                    <td>difficulty</td>
+                    <td>Herní obtížnost při zapnutí serveru</td>
+                </tr>
+                <tr>
+                    <td>max-players</td>
+                    <td>Maximální počet hráčů, pokud se naplní, server odmítne nová připojení</td>
+                </tr>
+                <tr>
+                    <td>online-mode</td>
+                    <td>Pokud vypnete, tak server nebude ověřovat přihlašovací údaje hráču, takže se budou moct připojit
+                        hráči, kteří mají pirátské kopie minecraftu.
+                        VAROVÁNÍ: Bez ověření se můžou hráči připojit s libovolným jménem, takže můžou předstírat, že
+                        jsou někým jiným.
+                    </td>
+                </tr>
+                <tr>
+                    <td>view-distance</td>
+                    <td>Vzdálenost po kterou bude svět načtem od hráče. Pokud máte problémy s výkonem serveru, je dobré
+                        tuto hodnotu snížit.</td>
+                </tr>
+                <tr>
+                    <td>white-list</td>
+                    <td>Povolí připojení jen hráčum napsaným ve souboru whitelist.txt</td>
+                </tr>
+                <tr>
+                    <td>spawn-protection</td>
+                    <td>jak daleko od spawnu je svět chráněn od poničení, klidně změňte na 0 pokud chcete survival</td>
                 </tr>
             </tbody>
         </table>
-        <p>Phasellus porttitor enim id metus volutpat ultricies. Ut nisi nunc, blandit sed dapibus at, vestibulum in
-            felis. Etiam iaculis lorem ac nibh bibendum rhoncus. Nam interdum efficitur ligula sit amet ullamcorper.
-            Etiam tristique, leo vitae porta faucibus, mi lacus laoreet metus, at cursus leo est vel tellus. Sed ac
-            posuere est. Nunc ultricies nunc neque, vitae ultricies ex sodales quis. Aliquam eu nibh in libero accumsan
-            pulvinar. Nullam nec nisl placerat, pretium metus vel, euismod ipsum. Proin tempor cursus nisl vel
-            condimentum. Nam pharetra varius metus non pellentesque.</p>
-        <h5>Fifth level</h5>
-        <p>Aliquam sagittis rhoncus vulputate. Cras non luctus sem, sed tincidunt ligula. Vestibulum at nunc elit.
-            Praesent aliquet ligula mi, in luctus elit volutpat porta. Phasellus molestie diam vel nisi sodales, a
-            eleifend augue laoreet. Sed nec eleifend justo. Nam et sollicitudin odio.</p>
 
-        <h6>Sixth level</h6>
-        <p>Cras in nibh lacinia, venenatis nisi et, auctor urna. Donec pulvinar lacus sed diam dignissim, ut eleifend
-            eros accumsan. Phasellus non tortor eros. Ut sed rutrum lacus. Etiam purus nunc, scelerisque quis enim
-            vitae, malesuada ultrices turpis. Nunc vitae maximus purus, nec consectetur dui. Suspendisse euismod, elit
-            vel rutrum commodo, ipsum tortor maximus dui, sed varius sapien odio vitae est. Etiam at cursus metus.</p>
     </div>
 </div>
 <footer class="footer">
