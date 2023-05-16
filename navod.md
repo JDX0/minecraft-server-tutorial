@@ -121,7 +121,84 @@ Pokud používáte Windows, můžete nyní spustit tento skript spuštěním př
 
 ## 7. Udělte souhlas s EULA a nakonfigurujte server
 
-_tohle dělá honza_
+Po prvním spuštěním serveru se vygeneruje několik souborů. Jeden z těchto souborů je eula.txt. Tento soubor značí, že souhlasíte s podmínkami použití serveru, které si můžete (v angličtině) přečíst [zde](https://www.minecraft.net/en-us/eula).
+
+Hlavní konfigurační soubor Minecraftového serveru je server.properties. Toto je jeho výchozí stav ve verzi 1.19.4:
+
+```
+enable-jmx-monitoring=false
+rcon.port=25575
+level-seed=
+gamemode=survival
+enable-command-block=false
+enable-query=false
+generator-settings={}
+enforce-secure-profile=true
+level-name=world
+motd=A Minecraft Server
+query.port=25565
+pvp=true
+generate-structures=true
+max-chained-neighbor-updates=1000000
+difficulty=easy
+network-compression-threshold=256
+max-tick-time=60000
+require-resource-pack=false
+use-native-transport=true
+max-players=20
+online-mode=true
+enable-status=true
+allow-flight=false
+initial-disabled-packs=
+broadcast-rcon-to-ops=true
+view-distance=10
+server-ip=
+resource-pack-prompt=
+allow-nether=true
+server-port=25565
+enable-rcon=false
+sync-chunk-writes=true
+op-permission-level=4
+prevent-proxy-connections=false
+hide-online-players=false
+resource-pack=
+entity-broadcast-range-percentage=100
+simulation-distance=10
+rcon.password=
+player-idle-timeout=0
+force-gamemode=false
+rate-limit=0
+hardcore=false
+white-list=false
+broadcast-console-to-ops=true
+spawn-npcs=true
+spawn-animals=true
+function-permission-level=2
+initial-enabled-packs=vanilla
+level-type=minecraft\:normal
+text-filtering-config=
+spawn-monsters=true
+enforce-whitelist=false
+spawn-protection=16
+resource-pack-sha1=
+max-world-size=29999984
+```
+
+V tomto souboru je několik položek, které je vhodné upravit, než server spustíte.
+
+| Jméno vlastnosti | Popis | Možné hodnoty |
+|-|-|-|
+| level-seed | Seed světa podle kterého se vygeneruje svět na serveru, pokud před tím neposkytnete jiný. Pokud tuto vlastnost nenastavíte, vybere se náhodné. | Jakékoli celé číslo |
+| gamemode | Herní režim, ve kterém budou hráči, když se připojí | creative, survival, adventure, spectator |
+| motd | Text, který hráči uvidí v seznamu serverů | Jakýkoliv text |
+| pvp | Zdali mohou hráči spolu bojovat pomocí přímého poškození | true, false |
+| difficulty | Úroveň obtížnosti | peaceful, easy, normal, hard |
+| max-players | Maximální množství hráčů, pokud se naplní, server začne odmítat nová připojení | Jakékoli přirozené číslo |
+| online-mode | Pokud vypnete, tak server nebude ověřovat přihlašovací údaje hráču, takže se budou moct připojit hráči, kteří mají pirátské kopie minecraftu. VAROVÁNÍ: Bez ověření se můžou hráči připojit s libovolným jménem, takže můžou předstírat, že jsou někým jiným. | true, false |
+| view-distance | Vzdálenost po kterou bude svět posílán hráči. Pokud máte problémy s výkonem serveru, je dobré tuto hodnotu snížit. | Jakékoli přirozené číslo |
+| simulation-distance | Vzdálenost po kterou bude svět simulován (budou fungovat farmy, redstone, spawnovat se mobové). Pokud máte problémy s výkonem serveru, je dobré tuto hodnotu snížit. | Jakékoli přirozené číslo |
+| white-list | Pokud je zapnuto, povolí připojení jen hráčum napsaným ve souboru whitelist.txt | true, false |
+| spawn-protection | Jak daleko od spawnu je svět chráněn od poničení, klidně změňte na 0 pokud chcete survival. | Jakékoli celé číslo větší než 0 |
 
 ## 8. Připojte se k serveru
 
