@@ -4,6 +4,7 @@
 - Nejlépe alespoň 4GB RAM a procesor s dobrým jednojádrovým výkonem
 - Rychlé připojení k internetu v obou směrech (nejlépe alespoň 50MB/s)
 - Přístup k nastavení routeru (není nutné u VPS)
+- Základní znalost příkazového řádku v operačním systému, který jste si zvolili
 
 # Návod
 
@@ -92,8 +93,16 @@ Než budeme pokračovat, doporučujeme v terminálu vyzkoušet příkaz `java --
 
 V sekci 1. jste si vybrali minecraftový server, který chcete používat. Nyní, pokud jste si nevybrali Spigot, otevřete webovou stránku, na kterou tento návod odkazuje a stáhněte verzi serveru (bývá ve formátu Java Archive - s příponou .jar), kterou chcete používat.
 
-Pokud příponu .jar nevidíte, zřejmě používáte operařní systém Windows a nemáte zapnuté zobrazování přípon.
+Pokud příponu .jar nevidíte, zřejmě používáte operařní systém Windows a nemáte zapnuté zobrazování přípon. To můžete zapnout na Windows 10 otevřením karty Zobrazení a zaškrknutím zaškrtávacího políčka zobrazit přípony souborů. Na Windows 11 to stejné můžete najít pod tlečítkem zobrazení.
 
-Vytvořte pak nový adresář kdekoli na počítači, kam máte přístup a právě stažený .jar soubor uložte do něj
+Vytvořte pak nový adresář kdekoli na počítači, kam máte přístup a právě stažený .jar soubor uložte do něj. Kvůli zbytku tutoriálu doporučujeme také soubor přejmenovat na server.jar, pokud nechcete upravovat spouštěcí shellový skript.
+
+Pokud používáte Spigot, uložte do této složky soubor BuildTools.jar, o kterém se mluví více v další sekci.
 
 ## 5. Instalace Spigotu
+
+Pokud vám nevadí potenciální riziko a možná zastaralost sestavení Spigotu, který se dá stáhnout jako jakýkoli jiný server, ale od stránek třetích stran, můžete jej stáhnout na stránkách jako např. [GetBukkit](https://getbukkit.org/). Spigot totiž od originálních vývojářů nedostanete ve spustitelné formě, ale jako sérii záplat pro oficiální server. Pokud těmto stránkách nevěříte, nebo chcete verzi Spigotu, kterou tyto stránky nenabízejí, můžete udělat tyto kroky:
+
+1. Z [této stránky](https://hub.spigotmc.org/jenkins/job/BuildTools/lastStableBuild/artifact/target/BuildTools.jar) stáhněte nejnovější verzi sestavovacích nástrojů (BuildTools.jar). Přesuňte jej do složky, kterou jste vytvořili v minulém kroku.
+2. Ve složce, kde jste soubor přesunuli, spusťte příkaz `java -jar BuildTools.jar --rev 1.19.4`, kde 1.19.4 nahraďte verzí Minecraftu, pro kterou chcete server sestavit.
+3. Počkejte než proces dokončí práci. Tento krok může trvat několik minut, v závislosti na výkonu a rychlosti připojení k internetu vašeho počítače.
