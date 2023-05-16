@@ -202,7 +202,7 @@ V tomto souboru je několik položek, které je vhodné upravit, než server spu
 
 ## 8. Připojte se k serveru
 
-_TODO_
+Pokud spouštíte server na vlastním počítači, můžete v Minecraftu vytvořit nový server s adresou localhost a připojit se na něj. Pokud ale server spouštíte na jiném počítači ve stejné síti, bude potřeba zadat do této kolonky jeho IP adresu.
 
 ## 9. Umožněte připojení se k serveru z internetu
 
