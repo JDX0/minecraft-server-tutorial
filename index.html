@@ -9,8 +9,7 @@
             max-height: 5rem;
         }
 
-        .move {
-            z-index: 1000;
+        .center {
         }
 
         @keyframes mymove {
@@ -43,8 +42,8 @@
 
     <div id="navbarBasicExample" class="navbar-menu">
         <div class="navbar-start">
-            <a href="http://e-mis.cz" class="navbar-item">
-                Naše oblíbená stránka
+            <a class="navbar-item">
+                Documentation
             </a>
         </div>
     </div>
@@ -52,28 +51,27 @@
 <div class="container">
     <div class="content">
 
+<<<<<<< HEAD
+        <h1 class="center" style="color: white;" id="jak-nainstalovat-minecraftový-server">Jak nainstalovat minecraftový
+=======
         <h1 class="move" style="text-align: center;" id="jak-nainstalovat-minecraftový-server">Jak nainstalovat minecraftový
+>>>>>>> a790f81dfb748ec59e4d1b77a32a97f5377225bf
             server</h1>
         <figure>
             <img src="images/mc.jpg" class="image" style="max-height: 66wh;">
         </figure>
         <h2 id="předpoklady">Předpoklady</h2>
         <ul>
-
-            <ul>
-                <li>Fyzický počítač nebo VPS s operačním systémem Windows, GNU/Linux, Mac OS, FreeBSD, OpenBSD nebo
-                    Androidem</li>
-                <blockquote>VPS je Virtuální Privátní Server. Ten běží na fyzickém počítače v datovém centru, ale dělí
-                    se o
-                    obrovský výkon s ostatními virtuálními servery. Každý uživatel tak má část prostředků, které fyzický
-                    server nabízí.</blockquote>
-                <li>Nejlépe alespoň 4GB RAM a procesor s dobrým jednojádrovým výkonem</li>
-                <li>Rychlé připojení k internetu v obou směrech (nejlépe alespoň 50MB/s)</li>
-                <li>Přístup k nastavení routeru (není nutné u VPS)</li>
-                <li>Základní znalost příkazového řádku v operačním systému, který jste si zvolili</li>
-                <li>Veřejnou IP adresu (pokud chcete, aby se k serveru dalo připojit z internetu)</li>
-            </ul>
-
+            <li>Fyzický počítač nebo VPS s operačním systémem Windows, GNU/Linux, MacOS, FreeBSD, OpenBSD nebo Androidem
+            </li>
+            <blockquote>VPS je Virtuální Privátní Server. Ten běží na fyzickém počítače v datovém centru, ale dělí se o
+                obrovský výkon s ostatními virtuálními servery. Každý uživatel tak má část prostředků, které fyzický
+                server nabízí.</blockquote>
+            <li>Nejlépe alespoň 4GB RAM a procesor s dobrým jednojádrovým výkonem</li>
+            <li>Rychlé připojení k internetu v obou směrech (nejlépe alespoň 50MB/s)</li>
+			<li>Základní znalost příkazového řádku v operačním systému, který jste
+si zvolili</li>
+            <li>Přístup k nastavení routeru (není nutné u VPS)</li>
         </ul>
         <figure>
             <img src="images/server.jpg" class="image" style="max-height: 400px;">
@@ -219,190 +217,247 @@
             Kvůli zbytku tutoriálu doporučujeme také soubor přejmenovat na server.jar, pokud nechcete upravovat
             spouštěcí shellový skript.</p>
         <p>Pokud používáte Spigot, uložte do této složky soubor BuildTools.jar, o kterém se mluví více v další sekci.
-        </p>
-        <h2 id="5-získejte-spigot">5. Získejte Spigot</h2>
-        <p>Pokud vám nevadí potenciální riziko a možná zastaralost sestavení Spigotu, který se dá stáhnout jako jakýkoli
-            jiný server, ale od stránek třetích stran, můžete jej stáhnout na stránkách jako např. <a
-                href="https://getbukkit.org/">GetBukkit</a>. Spigot totiž od originálních vývojářů nedostanete ve
-            spustitelné formě, ale jako sérii záplat pro oficiální server. Pokud těmto stránkách nevěříte, nebo chcete
-            verzi Spigotu, kterou tyto stránky nenabízejí, můžete udělat tyto kroky:</p>
-        <ol>
-            <li>Z <a
-                    href="https://hub.spigotmc.org/jenkins/job/BuildTools/lastStableBuild/artifact/target/BuildTools.jar">této
-                    stránky</a> stáhněte nejnovější verzi sestavovacích nástrojů (BuildTools.jar). Přesuňte jej do
-                složky, kterou jste vytvořili v minulém kroku.</li>
-            <li>Ve složce, kde jste soubor přesunuli, spusťte příkaz <code>java -jar BuildTools.jar --rev 1.19.4</code>,
-                kde 1.19.4 nahraďte verzí Minecraftu, pro kterou chcete server sestavit.</li>
-            <li>Počkejte než proces dokončí práci. Tento krok může trvat několik minut, v závislosti na výkonu a
-                rychlosti připojení k internetu vašeho počítače.</li>
-            <li>Na konci tohoto procesu by ve vaší složce být soubor se jménem zhruba jako spigot-1.19.4.jar. Tento
-                soubor doporučujeme přejmenovat na server.jar, kvůli zbytku tutoriálu.</li>
-        </ol>
-        <h2 id="6-spusťte-server">6. Spusťte server</h2>
-        <p>V tuto chvíli máte stažený Minecraftový server, jeho spouštění ale není tak jednoduché, jako dvojklik,
-            jelikož je nutné vytvořit skript, který ho spustí s parametry vhodnými pro počítač, který jej bude spouštět.
-        </p>
-        <p>V závislosti na operačním systému bude mít skript jinou příponu, pro Windows vytvořte soubor start.bat a pro
-            ostatní systémy vytvořte soubor start.sh. Nyní otevřete tento soubor v rozumném textovém editoru pro planý
-            text (ne Word) pro váš operační systém.</p>
-        <p>Do tohoto souboru vložte příkaz ve tvaru <code>java -Xms16G -Xmx16G -jar server.jar nogui</code>, kdy
-            nahraďíte 16G počtem gigabytů paměti, kterou jste ochotní svému serveru přidělit a server.jar názvem souboru
-            serveru, doporučujeme ale použít minimálně 4.</p>
-        <p>Pokud používáte Windows, můžete nyní spustit tento skript spuštěním příkazu <code>start</code> ve složce, ve
-            které se nachází, nebo dvojklikem na něj. Pokud používáte jakýkoli jiný operační systém v tomto návodu,
-            musíte ještě umožnit spuštění tohoto skriptu pomocí příkazu <code>chmod +x start.sh</code> a spouštět ho pak
-            pomocí příkazu <code>./start.sh</code> ve složce, kde se soubor start.sh nachází.</p>
-        <h2 id="7-udělte-souhlas-s-eula-a-nakonfigurujte-server">7. Udělte souhlas s EULA a nakonfigurujte server</h2>
-        <p>Po prvním spuštěním serveru se vygeneruje několik souborů. Jeden z těchto souborů je eula.txt. Tento soubor
-            značí, že souhlasíte s podmínkami použití serveru, které si můžete (v angličtině) přečíst <a
-                href="https://www.minecraft.net/en-us/eula">zde</a>.</p>
-        <p>Hlavní konfigurační soubor Minecraftového serveru je server.properties. Toto je jeho výchozí stav ve verzi
-            1.19.4:</p>
-        <pre>
-        <code>
-        enable-jmx-monitoring=false
-        rcon.port=25575
-        level-seed=
-        gamemode=survival
-        enable-command-block=false
-        enable-query=false
-        generator-settings={}
-        enforce-secure-profile=true
-        level-name=world
-        motd=A Minecraft Server
-        query.port=25565
-        pvp=true
-        generate-structures=true
-        max-chained-neighbor-updates=1000000
-        difficulty=easy
-        network-compression-threshold=256
-        max-tick-time=60000
-        require-resource-pack=false
-        use-native-transport=true
-        max-players=20
-        online-mode=true
-        enable-status=true
-        allow-flight=false
-        initial-disabled-packs=
-        broadcast-rcon-to-ops=true
-        view-distance=10
-        server-ip=
-        resource-pack-prompt=
-        allow-nether=true
-        server-port=25565
-        enable-rcon=false
-        sync-chunk-writes=true
-        op-permission-level=4
-        prevent-proxy-connections=false
-        hide-online-players=false
-        resource-pack=
-        entity-broadcast-range-percentage=100
-        simulation-distance=10
-        rcon.password=
-        player-idle-timeout=0
-        force-gamemode=false
-        rate-limit=0
-        hardcore=false
-        white-list=false
-        broadcast-console-to-ops=true
-        spawn-npcs=true
-        spawn-animals=true
-        function-permission-level=2
-        initial-enabled-packs=vanilla
-        level-type=minecraft\:normal
-        text-filtering-config=
-        spawn-monsters=true
-        enforce-whitelist=false
-        spawn-protection=16
-        resource-pack-sha1=
-        max-world-size=29999984
-        </code></pre>
-        <p>V tomto souboru je několik položek, které je vhodné upravit, než server spustíte.</p>
-        <table>
-            <thead>
-                <tr>
-                    <th>Jméno vlastnosti</th>
-                    <th>Popis</th>
-                    <th>Možné hodnoty</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>level-seed</td>
-                    <td>Seed světa podle kterého se vygeneruje svět na serveru, pokud před tím neposkytnete jiný. Pokud
-                        tuto vlastnost nenastavíte, vybere se náhodné.</td>
-                    <td>Jakékoli celé číslo</td>
-                </tr>
-                <tr>
-                    <td>gamemode</td>
-                    <td>Herní režim, ve kterém budou hráči, když se připojí</td>
-                    <td>creative, survival, adventure, spectator</td>
-                </tr>
-                <tr>
-                    <td>motd</td>
-                    <td>Text, který hráči uvidí v seznamu serverů</td>
-                    <td>Jakýkoliv text</td>
-                </tr>
-                <tr>
-                    <td>pvp</td>
-                    <td>Zdali mohou hráči spolu bojovat pomocí přímého poškození</td>
-                    <td>true, false</td>
-                </tr>
-                <tr>
-                    <td>difficulty</td>
-                    <td>Úroveň obtížnosti</td>
-                    <td>peaceful, easy, normal, hard</td>
-                </tr>
-                <tr>
-                    <td>max-players</td>
-                    <td>Maximální množství hráčů, pokud se naplní, server začne odmítat nová připojení</td>
-                    <td>Jakékoli přirozené číslo</td>
-                </tr>
-                <tr>
-                    <td>online-mode</td>
-                    <td>Pokud vypnete, tak server nebude ověřovat přihlašovací údaje hráču, takže se budou moct připojit
-                        hráči, kteří mají pirátské kopie minecraftu. VAROVÁNÍ: Bez ověření se můžou hráči připojit s
-                        libovolným jménem, takže můžou předstírat, že jsou někým jiným.</td>
-                    <td>true, false</td>
-                </tr>
-                <tr>
-                    <td>view-distance</td>
-                    <td>Vzdálenost po kterou bude svět posílán hráči. Pokud máte problémy s výkonem serveru, je dobré
-                        tuto hodnotu snížit.</td>
-                    <td>Jakékoli přirozené číslo</td>
-                </tr>
-                <tr>
-                    <td>simulation-distance</td>
-                    <td>Vzdálenost po kterou bude svět simulován (budou fungovat farmy, redstone, spawnovat se mobové).
-                        Pokud máte problémy s výkonem serveru, je dobré tuto hodnotu snížit.</td>
-                    <td>Jakékoli přirozené číslo</td>
-                </tr>
-                <tr>
-                    <td>white-list</td>
-                    <td>Pokud je zapnuto, povolí připojení jen hráčum napsaným ve souboru whitelist.txt</td>
-                    <td>true, false</td>
-                </tr>
-                <tr>
-                    <td>spawn-protection</td>
-                    <td>Jak daleko od spawnu je svět chráněn od poničení, klidně změňte na 0 pokud chcete survival.</td>
-                    <td>Jakékoli celé číslo větší než 0</td>
-                </tr>
-            </tbody>
-        </table>
-        <h2 id="8-připojte-se-k-serveru">8. Připojte se k serveru</h2>
-        <p><em>TODO</em></p>
-        <h2 id="9-umožněte-připojení-se-k-serveru-z-internetu">9. Umožněte připojení se k serveru z internetu</h2>
-        <p>V tuto chvíli se můžete připojit k serveru pomocí vlastního počítače a pomocí počítačů ve stejné síti jako
-            vy. Pokud vám to stačí, můžete nyní přestat a začít hrát. V opačném případě budete potřebovat </p>
-
+        </p><h2 id="získejte-spigot">5. Získejte Spigot</h2>
+<p>Pokud vám nevadí potenciální riziko a možná zastaralost sestavení
+Spigotu, který se dá stáhnout jako jakýkoli jiný server, ale od stránek
+třetích stran, můžete jej stáhnout na stránkách jako např. <a
+href="https://getbukkit.org/">GetBukkit</a>. Spigot totiž od
+originálních vývojářů nedostanete ve spustitelné formě, ale jako sérii
+záplat pro oficiální server. Pokud těmto stránkách nevěříte, nebo chcete
+verzi Spigotu, kterou tyto stránky nenabízejí, můžete udělat tyto
+kroky:</p>
+<ol type="1">
+<li>Z <a
+href="https://hub.spigotmc.org/jenkins/job/BuildTools/lastStableBuild/artifact/target/BuildTools.jar">této
+stránky</a> stáhněte nejnovější verzi sestavovacích nástrojů
+(BuildTools.jar). Přesuňte jej do složky, kterou jste vytvořili v
+minulém kroku.</li>
+<li>Ve složce, kde jste soubor přesunuli, spusťte příkaz
+<code>java -jar BuildTools.jar --rev 1.19.4</code>, kde 1.19.4 nahraďte
+verzí Minecraftu, pro kterou chcete server sestavit.</li>
+<li>Počkejte než proces dokončí práci. Tento krok může trvat několik
+minut, v závislosti na výkonu a rychlosti připojení k internetu vašeho
+počítače.</li>
+<li>Na konci tohoto procesu by ve vaší složce být soubor se jménem
+zhruba jako spigot-1.19.4.jar. Tento soubor doporučujeme přejmenovat na
+server.jar, kvůli zbytku tutoriálu.</li>
+</ol>
+<h2 id="spusťte-server">6. Spusťte server</h2>
+<p>V tuto chvíli máte stažený Minecraftový server, jeho spouštění ale
+není tak jednoduché, jako dvojklik, jelikož je nutné vytvořit skript,
+který ho spustí s parametry vhodnými pro počítač, který jej bude
+spouštět.</p>
+<p>V závislosti na operačním systému bude mít skript jinou příponu, pro
+Windows vytvořte soubor start.bat a pro ostatní systémy vytvořte soubor
+start.sh. Nyní otevřete tento soubor v rozumném textovém editoru pro
+planý text (ne Word) pro váš operační systém.</p>
+<p>Do tohoto souboru vložte příkaz ve tvaru
+<code>java -Xms16G -Xmx16G -jar server.jar nogui</code>, kdy nahraďíte
+16G počtem gigabytů paměti, kterou jste ochotní svému serveru přidělit a
+server.jar názvem souboru serveru, doporučujeme ale použít minimálně
+4.</p>
+<p>Pokud používáte Windows, můžete nyní spustit tento skript spuštěním
+příkazu <code>start</code> ve složce, ve které se nachází, nebo
+dvojklikem na něj. Pokud používáte jakýkoli jiný operační systém v tomto
+návodu, musíte ještě umožnit spuštění tohoto skriptu pomocí příkazu
+<code>chmod +x start.sh</code> a spouštět ho pak pomocí příkazu
+<code>./start.sh</code> ve složce, kde se soubor start.sh nachází.</p>
+<h2 id="udělte-souhlas-s-eula-a-nakonfigurujte-server">7. Udělte souhlas
+s EULA a nakonfigurujte server</h2>
+<p>Po prvním spuštěním serveru se vygeneruje několik souborů. Jeden z
+těchto souborů je eula.txt. Tento soubor značí, že souhlasíte s
+podmínkami použití serveru, které si můžete (v angličtině) přečíst <a
+href="https://www.minecraft.net/en-us/eula">zde</a>. Souhlas s těmito
+podmínami vyjádříte změnou <code>eula=false</code> na
+<code>eula=true</code> v tomto souboru.</p>
+<p>Dále je ještě potřeba upravit hlavní konfigurační soubor
+Minecraftového serveru, což je server.properties. Toto je jeho výchozí
+stav ve verzi 1.19.4:</p>
+<pre><code>enable-jmx-monitoring=false
+rcon.port=25575
+level-seed=
+gamemode=survival
+enable-command-block=false
+enable-query=false
+generator-settings={}
+enforce-secure-profile=true
+level-name=world
+motd=A Minecraft Server
+query.port=25565
+pvp=true
+generate-structures=true
+max-chained-neighbor-updates=1000000
+difficulty=easy
+network-compression-threshold=256
+max-tick-time=60000
+require-resource-pack=false
+use-native-transport=true
+max-players=20
+online-mode=true
+enable-status=true
+allow-flight=false
+initial-disabled-packs=
+broadcast-rcon-to-ops=true
+view-distance=10
+server-ip=
+resource-pack-prompt=
+allow-nether=true
+server-port=25565
+enable-rcon=false
+sync-chunk-writes=true
+op-permission-level=4
+prevent-proxy-connections=false
+hide-online-players=false
+resource-pack=
+entity-broadcast-range-percentage=100
+simulation-distance=10
+rcon.password=
+player-idle-timeout=0
+force-gamemode=false
+rate-limit=0
+hardcore=false
+white-list=false
+broadcast-console-to-ops=true
+spawn-npcs=true
+spawn-animals=true
+function-permission-level=2
+initial-enabled-packs=vanilla
+level-type=minecraft\:normal
+text-filtering-config=
+spawn-monsters=true
+enforce-whitelist=false
+spawn-protection=16
+resource-pack-sha1=
+max-world-size=29999984</code></pre>
+<p>V tomto souboru je několik položek, které je vhodné upravit, než
+server spustíte.</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Jméno vlastnosti</th>
+<th>Popis</th>
+<th>Možné hodnoty</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>level-seed</td>
+<td>Seed světa podle kterého se vygeneruje svět na serveru, pokud před
+tím neposkytnete jiný. Pokud tuto vlastnost nenastavíte, vybere se
+náhodné.</td>
+<td>Jakékoli celé číslo</td>
+</tr>
+<tr class="even">
+<td>gamemode</td>
+<td>Herní režim, ve kterém budou hráči, když se připojí</td>
+<td>creative, survival, adventure, spectator</td>
+</tr>
+<tr class="odd">
+<td>motd</td>
+<td>Text, který hráči uvidí v seznamu serverů</td>
+<td>Jakýkoliv text</td>
+</tr>
+<tr class="even">
+<td>pvp</td>
+<td>Zdali mohou hráči spolu bojovat pomocí přímého poškození</td>
+<td>true, false</td>
+</tr>
+<tr class="odd">
+<td>difficulty</td>
+<td>Úroveň obtížnosti</td>
+<td>peaceful, easy, normal, hard</td>
+</tr>
+<tr class="even">
+<td>max-players</td>
+<td>Maximální množství hráčů, pokud se naplní, server začne odmítat nová
+připojení</td>
+<td>Jakékoli přirozené číslo</td>
+</tr>
+<tr class="odd">
+<td>online-mode</td>
+<td>Pokud vypnete, tak server nebude ověřovat přihlašovací údaje hráču,
+takže se budou moct připojit hráči, kteří mají pirátské kopie
+minecraftu. VAROVÁNÍ: Bez ověření se můžou hráči připojit s libovolným
+jménem, takže můžou předstírat, že jsou někým jiným.</td>
+<td>true, false</td>
+</tr>
+<tr class="even">
+<td>view-distance</td>
+<td>Vzdálenost po kterou bude svět posílán hráči. Pokud máte problémy s
+výkonem serveru, je dobré tuto hodnotu snížit.</td>
+<td>Jakékoli přirozené číslo</td>
+</tr>
+<tr class="odd">
+<td>simulation-distance</td>
+<td>Vzdálenost po kterou bude svět simulován (budou fungovat farmy,
+redstone, spawnovat se mobové). Pokud máte problémy s výkonem serveru,
+je dobré tuto hodnotu snížit.</td>
+<td>Jakékoli přirozené číslo</td>
+</tr>
+<tr class="even">
+<td>white-list</td>
+<td>Pokud je zapnuto, povolí připojení jen hráčum napsaným ve souboru
+whitelist.txt</td>
+<td>true, false</td>
+</tr>
+<tr class="odd">
+<td>spawn-protection</td>
+<td>Jak daleko od spawnu je svět chráněn od poničení, klidně změňte na 0
+pokud chcete survival.</td>
+<td>Jakékoli celé číslo větší než 0</td>
+</tr>
+</tbody>
+</table>
+<h2 id="připojte-se-k-serveru">8. Připojte se k serveru</h2>
+<p>Pokud spouštíte server na vlastním počítači, můžete v Minecraftu
+vytvořit nový server s adresou localhost a připojit se na něj. Pokud ale
+server spouštíte na jiném počítači ve stejné síti, bude potřeba zadat do
+této kolonky jeho IP adresu. Příkazy k zjištění IP adresy a adresy
+routeru na počítači na počítači se bude lišit podle operačního
+systému.</p>
+<ul>
+<li>Windows a Mac OS: <code>ipconfig</code></li>
+<li>GNU/Linux a Termux/Android: <code>ip a</code></li>
+<li>FreeBSD a OpenBSD: <code>ifconfig</code></li>
+</ul>
+<h2 id="umožněte-připojení-se-k-serveru-z-internetu">9. Umožněte
+připojení se k serveru z internetu</h2>
+<p>V tuto chvíli se můžete připojit k serveru pomocí vlastního počítače
+a pomocí počítačů ve stejné síti jako vy. Pokud vám to stačí, můžete
+nyní přestat a začít hrát. V opačném případě budete muset nakonfigurovat
+router, aby svoje připojení přesměrovával na váš počítač. Tato
+konfigurace je pro každý router jiná, ale typicky zahrnuje tyto
+kroky:</p>
+<ul>
+<li>Na většině domácích routerů stačí zadat IP adresu routeru zjištěnou
+příkazy v sekci 8 do webového prohlížeče, pokud používáte některý z
+firemních routerů, postupy mohou být jiné, v tomto případě doporučujeme
+kontaktovat správce vaší sítě (v takovém případě nepokračujte dále v
+této sekci).</li>
+<li>Nalezněte sekci s názvem přesměrování protů, port forwarding nebo
+předávání.</li>
+<li>Přidejte do tabulky předávání IP adresu vašeho počítače a jako port
+vzdálený i soukromý použijte 25565, pokud jste ho v sekci 7
+nezměnili</li>
+<li>Zjištěte veřejnou adresu svého počítače (Váš vyhledávač vám vyhledá
+několik stránek, které vám vaši IP adresu řeknou, případně můžete
+navštívit <a
+href="https://checkip.amazonaws.com/">checkip.amazonaws.com</a>)</li>
+<li>Připojte se na tuto veřejnou IP adresu</li>
+</ul>
 
     </div>
 </div>
 <footer class="footer">
     <div class="content has-text-centered">
         <p>
-            <strong>Minecraft server tutoriál</strong> vytvořili <a href="https://github.com/JDX0">Jan Josefik</a>, <a
-                href="https://github.com/JDX0">Tadeáš Erban</a> a <a href="https://github.com/JDX0">Tomáš Lesa</a>.
+            <strong>Minecraft server tutorial</strong> by <a href="https://github.com/JDX0">Jan Josefik</a>, <a
+                href="https://github.com/JDX0">Tadeáš Erban</a> and <a href="https://github.com/JDX0">Tomáš Lesa</a>.
     </div>
 </footer>
 
