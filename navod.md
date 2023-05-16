@@ -5,6 +5,7 @@
 - Rychlé připojení k internetu v obou směrech (nejlépe alespoň 50MB/s)
 - Přístup k nastavení routeru (není nutné u VPS)
 - Základní znalost příkazového řádku v operačním systému, který jste si zvolili
+- Veřejnou IP adresu (pokud chcete, aby se k serveru dalo připojit z internetu)
 
 # Návod
 
@@ -128,4 +129,4 @@ _TODO_
 
 ## 9. Umožněte připojení se k serveru z internetu
 
-_TODO_
+V tuto chvíli se můžete připojit k serveru pomocí vlastního počítače a pomocí počítačů ve stejné síti jako vy. Pokud vám to stačí, můžete nyní přestat a začít hrát. V opačném případě budete potřebovat 
