@@ -10,8 +10,6 @@
         }
 
         .move {
-            position: relative;
-            animation: mymove 5s infinite;
             z-index: 1000;
         }
 
@@ -45,8 +43,8 @@
 
     <div id="navbarBasicExample" class="navbar-menu">
         <div class="navbar-start">
-            <a class="navbar-item">
-                Documentation
+            <a href="http://e-mis.cz" class="navbar-item">
+                Naše oblíbená stránka
             </a>
         </div>
     </div>
@@ -61,14 +59,21 @@
         </figure>
         <h2 id="předpoklady">Předpoklady</h2>
         <ul>
-            <li>Fyzický počítač nebo VPS s operačním systémem Windows, GNU/Linux, MacOS, FreeBSD, OpenBSD nebo Androidem
-            </li>
-            <blockquote>VPS je Virtuální Privátní Server. Ten běží na fyzickém počítače v datovém centru, ale dělí se o
-                obrovský výkon s ostatními virtuálními servery. Každý uživatel tak má část prostředků, které fyzický
-                server nabízí.</blockquote>
-            <li>Nejlépe alespoň 4GB RAM a procesor s dobrým jednojádrovým výkonem</li>
-            <li>Rychlé připojení k internetu v obou směrech (nejlépe alespoň 50MB/s)</li>
-            <li>Přístup k nastavení routeru (není nutné u VPS)</li>
+
+            <ul>
+                <li>Fyzický počítač nebo VPS s operačním systémem Windows, GNU/Linux, Mac OS, FreeBSD, OpenBSD nebo
+                    Androidem</li>
+                <blockquote>VPS je Virtuální Privátní Server. Ten běží na fyzickém počítače v datovém centru, ale dělí
+                    se o
+                    obrovský výkon s ostatními virtuálními servery. Každý uživatel tak má část prostředků, které fyzický
+                    server nabízí.</blockquote>
+                <li>Nejlépe alespoň 4GB RAM a procesor s dobrým jednojádrovým výkonem</li>
+                <li>Rychlé připojení k internetu v obou směrech (nejlépe alespoň 50MB/s)</li>
+                <li>Přístup k nastavení routeru (není nutné u VPS)</li>
+                <li>Základní znalost příkazového řádku v operačním systému, který jste si zvolili</li>
+                <li>Veřejnou IP adresu (pokud chcete, aby se k serveru dalo připojit z internetu)</li>
+            </ul>
+
         </ul>
         <figure>
             <img src="images/server.jpg" class="image" style="max-height: 400px;">
@@ -215,7 +220,7 @@
             spouštěcí shellový skript.</p>
         <p>Pokud používáte Spigot, uložte do této složky soubor BuildTools.jar, o kterém se mluví více v další sekci.
         </p>
-        <h2 id="5-instalace-spigotu">5. Instalace Spigotu</h2>
+        <h2 id="5-získejte-spigot">5. Získejte Spigot</h2>
         <p>Pokud vám nevadí potenciální riziko a možná zastaralost sestavení Spigotu, který se dá stáhnout jako jakýkoli
             jiný server, ale od stránek třetích stran, můžete jej stáhnout na stránkách jako např. <a
                 href="https://getbukkit.org/">GetBukkit</a>. Spigot totiž od originálních vývojářů nedostanete ve
@@ -230,129 +235,166 @@
                 kde 1.19.4 nahraďte verzí Minecraftu, pro kterou chcete server sestavit.</li>
             <li>Počkejte než proces dokončí práci. Tento krok může trvat několik minut, v závislosti na výkonu a
                 rychlosti připojení k internetu vašeho počítače.</li>
+            <li>Na konci tohoto procesu by ve vaší složce být soubor se jménem zhruba jako spigot-1.19.4.jar. Tento
+                soubor doporučujeme přejmenovat na server.jar, kvůli zbytku tutoriálu.</li>
         </ol>
-        <h2>Souhlas EULA</h2>
-        <p>Po prvníjm spuštění serveru se vám ve složce objeví soubor eula.txt, pokud souhlasíte s podmínkami použití
-            serveru, tak soubor otevřete v textovém editoru a "eula=false" změňte na "eula=true"</p>
-        <h2>Konfigurace</h2>
-        <p>hlavní konfigurační soubor minecraft serveru je server.properties, toto je jeho výchozí stav ve verzi 1.19.4:
+        <h2 id="6-spusťte-server">6. Spusťte server</h2>
+        <p>V tuto chvíli máte stažený Minecraftový server, jeho spouštění ale není tak jednoduché, jako dvojklik,
+            jelikož je nutné vytvořit skript, který ho spustí s parametry vhodnými pro počítač, který jej bude spouštět.
         </p>
+        <p>V závislosti na operačním systému bude mít skript jinou příponu, pro Windows vytvořte soubor start.bat a pro
+            ostatní systémy vytvořte soubor start.sh. Nyní otevřete tento soubor v rozumném textovém editoru pro planý
+            text (ne Word) pro váš operační systém.</p>
+        <p>Do tohoto souboru vložte příkaz ve tvaru <code>java -Xms16G -Xmx16G -jar server.jar nogui</code>, kdy
+            nahraďíte 16G počtem gigabytů paměti, kterou jste ochotní svému serveru přidělit a server.jar názvem souboru
+            serveru, doporučujeme ale použít minimálně 4.</p>
+        <p>Pokud používáte Windows, můžete nyní spustit tento skript spuštěním příkazu <code>start</code> ve složce, ve
+            které se nachází, nebo dvojklikem na něj. Pokud používáte jakýkoli jiný operační systém v tomto návodu,
+            musíte ještě umožnit spuštění tohoto skriptu pomocí příkazu <code>chmod +x start.sh</code> a spouštět ho pak
+            pomocí příkazu <code>./start.sh</code> ve složce, kde se soubor start.sh nachází.</p>
+        <h2 id="7-udělte-souhlas-s-eula-a-nakonfigurujte-server">7. Udělte souhlas s EULA a nakonfigurujte server</h2>
+        <p>Po prvním spuštěním serveru se vygeneruje několik souborů. Jeden z těchto souborů je eula.txt. Tento soubor
+            značí, že souhlasíte s podmínkami použití serveru, které si můžete (v angličtině) přečíst <a
+                href="https://www.minecraft.net/en-us/eula">zde</a>.</p>
+        <p>Hlavní konfigurační soubor Minecraftového serveru je server.properties. Toto je jeho výchozí stav ve verzi
+            1.19.4:</p>
         <pre>
-            enable-jmx-monitoring=false
-            rcon.port=25575
-            level-seed=
-            gamemode=survival
-            enable-command-block=false
-            enable-query=false
-            generator-settings={}
-            enforce-secure-profile=true
-            level-name=world
-            motd=A Minecraft Server
-            query.port=25565
-            pvp=true
-            generate-structures=true
-            max-chained-neighbor-updates=1000000
-            difficulty=easy
-            network-compression-threshold=256
-            max-tick-time=60000
-            require-resource-pack=false
-            use-native-transport=true
-            max-players=20
-            online-mode=true
-            enable-status=true
-            allow-flight=false
-            initial-disabled-packs=
-            broadcast-rcon-to-ops=true
-            view-distance=10
-            server-ip=
-            resource-pack-prompt=
-            allow-nether=true
-            server-port=25565
-            enable-rcon=false
-            sync-chunk-writes=true
-            op-permission-level=4
-            prevent-proxy-connections=false
-            hide-online-players=false
-            resource-pack=
-            entity-broadcast-range-percentage=100
-            simulation-distance=10
-            rcon.password=
-            player-idle-timeout=0
-            force-gamemode=false
-            rate-limit=0
-            hardcore=false
-            white-list=false
-            broadcast-console-to-ops=true
-            spawn-npcs=true
-            spawn-animals=true
-            function-permission-level=2
-            initial-enabled-packs=vanilla
-            level-type=minecraft\:normal
-            text-filtering-config=
-            spawn-monsters=true
-            enforce-whitelist=false
-            spawn-protection=16
-            resource-pack-sha1=
-            max-world-size=29999984
-        </pre>
-        <p>nejdůležitejší položky:</p>
+        <code>
+        enable-jmx-monitoring=false
+        rcon.port=25575
+        level-seed=
+        gamemode=survival
+        enable-command-block=false
+        enable-query=false
+        generator-settings={}
+        enforce-secure-profile=true
+        level-name=world
+        motd=A Minecraft Server
+        query.port=25565
+        pvp=true
+        generate-structures=true
+        max-chained-neighbor-updates=1000000
+        difficulty=easy
+        network-compression-threshold=256
+        max-tick-time=60000
+        require-resource-pack=false
+        use-native-transport=true
+        max-players=20
+        online-mode=true
+        enable-status=true
+        allow-flight=false
+        initial-disabled-packs=
+        broadcast-rcon-to-ops=true
+        view-distance=10
+        server-ip=
+        resource-pack-prompt=
+        allow-nether=true
+        server-port=25565
+        enable-rcon=false
+        sync-chunk-writes=true
+        op-permission-level=4
+        prevent-proxy-connections=false
+        hide-online-players=false
+        resource-pack=
+        entity-broadcast-range-percentage=100
+        simulation-distance=10
+        rcon.password=
+        player-idle-timeout=0
+        force-gamemode=false
+        rate-limit=0
+        hardcore=false
+        white-list=false
+        broadcast-console-to-ops=true
+        spawn-npcs=true
+        spawn-animals=true
+        function-permission-level=2
+        initial-enabled-packs=vanilla
+        level-type=minecraft\:normal
+        text-filtering-config=
+        spawn-monsters=true
+        enforce-whitelist=false
+        spawn-protection=16
+        resource-pack-sha1=
+        max-world-size=29999984
+        </code></pre>
+        <p>V tomto souboru je několik položek, které je vhodné upravit, než server spustíte.</p>
         <table>
+            <thead>
+                <tr>
+                    <th>Jméno vlastnosti</th>
+                    <th>Popis</th>
+                    <th>Možné hodnoty</th>
+                </tr>
+            </thead>
             <tbody>
                 <tr>
-                    <td>
-                        level-seed
-                    </td>
-                    <td>
-                        Seed světa, pokud neneastavíte, vybere se náhodný
-                    </td>
+                    <td>level-seed</td>
+                    <td>Seed světa podle kterého se vygeneruje svět na serveru, pokud před tím neposkytnete jiný. Pokud
+                        tuto vlastnost nenastavíte, vybere se náhodné.</td>
+                    <td>Jakékoli celé číslo</td>
                 </tr>
                 <tr>
                     <td>gamemode</td>
-                    <td>Gamemode, který se nastaví hráči, když se na server poprvé připojí</td>
+                    <td>Herní režim, ve kterém budou hráči, když se připojí</td>
+                    <td>creative, survival, adventure, spectator</td>
                 </tr>
                 <tr>
                     <td>motd</td>
-                    <td>Text, který hráči uvidí ve seznamu serverů</td>
+                    <td>Text, který hráči uvidí v seznamu serverů</td>
+                    <td>Jakýkoliv text</td>
                 </tr>
                 <tr>
                     <td>pvp</td>
-                    <td>Pokud nastavíte na false, hráči nebudou moct ostatním hráčum dávat přímé poškození</td>
+                    <td>Zdali mohou hráči spolu bojovat pomocí přímého poškození</td>
+                    <td>true, false</td>
                 </tr>
                 <tr>
                     <td>difficulty</td>
-                    <td>Herní obtížnost při zapnutí serveru</td>
+                    <td>Úroveň obtížnosti</td>
+                    <td>peaceful, easy, normal, hard</td>
                 </tr>
                 <tr>
                     <td>max-players</td>
-                    <td>Maximální počet hráčů, pokud se naplní, server odmítne nová připojení</td>
+                    <td>Maximální množství hráčů, pokud se naplní, server začne odmítat nová připojení</td>
+                    <td>Jakékoli přirozené číslo</td>
                 </tr>
                 <tr>
                     <td>online-mode</td>
                     <td>Pokud vypnete, tak server nebude ověřovat přihlašovací údaje hráču, takže se budou moct připojit
-                        hráči, kteří mají pirátské kopie minecraftu.
-                        VAROVÁNÍ: Bez ověření se můžou hráči připojit s libovolným jménem, takže můžou předstírat, že
-                        jsou někým jiným.
-                    </td>
+                        hráči, kteří mají pirátské kopie minecraftu. VAROVÁNÍ: Bez ověření se můžou hráči připojit s
+                        libovolným jménem, takže můžou předstírat, že jsou někým jiným.</td>
+                    <td>true, false</td>
                 </tr>
                 <tr>
                     <td>view-distance</td>
-                    <td>Vzdálenost, po kterou bude svět načtem od hráče. Pokud máte problémy s výkonem serveru, je dobré
+                    <td>Vzdálenost po kterou bude svět posílán hráči. Pokud máte problémy s výkonem serveru, je dobré
                         tuto hodnotu snížit.</td>
+                    <td>Jakékoli přirozené číslo</td>
                 </tr>
                 <tr>
                     <td>simulation-distance</td>
-                    <td>Vzdálenost, po kterou budou ve světe simulována živá stvoření, snížení může pomoct s výkonem.</td>
+                    <td>Vzdálenost po kterou bude svět simulován (budou fungovat farmy, redstone, spawnovat se mobové).
+                        Pokud máte problémy s výkonem serveru, je dobré tuto hodnotu snížit.</td>
+                    <td>Jakékoli přirozené číslo</td>
                 </tr>
                 <tr>
                     <td>white-list</td>
-                    <td>Povolí připojení jen hráčum napsaným ve souboru whitelist.txt</td>
+                    <td>Pokud je zapnuto, povolí připojení jen hráčum napsaným ve souboru whitelist.txt</td>
+                    <td>true, false</td>
                 </tr>
                 <tr>
                     <td>spawn-protection</td>
-                    <td>Jak daleko od spawnu je svět chráněn od poničení, klidně změňte na 0 pokud chcete normální survival.</td>
+                    <td>Jak daleko od spawnu je svět chráněn od poničení, klidně změňte na 0 pokud chcete survival.</td>
+                    <td>Jakékoli celé číslo větší než 0</td>
                 </tr>
             </tbody>
         </table>
+        <h2 id="8-připojte-se-k-serveru">8. Připojte se k serveru</h2>
+        <p><em>TODO</em></p>
+        <h2 id="9-umožněte-připojení-se-k-serveru-z-internetu">9. Umožněte připojení se k serveru z internetu</h2>
+        <p>V tuto chvíli se můžete připojit k serveru pomocí vlastního počítače a pomocí počítačů ve stejné síti jako
+            vy. Pokud vám to stačí, můžete nyní přestat a začít hrát. V opačném případě budete potřebovat </p>
+
 
     </div>
 </div>
