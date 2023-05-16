@@ -118,3 +118,14 @@ Do tohoto souboru vložte příkaz ve tvaru `java -Xms16G -Xmx16G -jar server.ja
 
 Pokud používáte Windows, můžete nyní spustit tento skript spuštěním příkazu `start` ve složce, ve které se nachází, nebo dvojklikem na něj. Pokud používáte jakýkoli jiný operační systém v tomto návodu, musíte ještě umožnit spuštění tohoto skriptu pomocí příkazu `chmod +x start.sh` a spouštět ho pak pomocí příkazu `./start.sh` ve složce, kde se soubor start.sh nachází.
 
+## 7. Udělte souhlas s EULA a nakonfigurujte server
+
+_tohle dělá honza_
+
+## 8. Připojte se k serveru
+
+_TODO_
+
+## 9. Umožněte připojení se k serveru z internetu
+
+_TODO_
