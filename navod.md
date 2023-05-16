@@ -121,9 +121,9 @@ Pokud používáte Windows, můžete nyní spustit tento skript spuštěním př
 
 ## 7. Udělte souhlas s EULA a nakonfigurujte server
 
-Po prvním spuštěním serveru se vygeneruje několik souborů. Jeden z těchto souborů je eula.txt. Tento soubor značí, že souhlasíte s podmínkami použití serveru, které si můžete (v angličtině) přečíst [zde](https://www.minecraft.net/en-us/eula).
+Po prvním spuštěním serveru se vygeneruje několik souborů. Jeden z těchto souborů je eula.txt. Tento soubor značí, že souhlasíte s podmínkami použití serveru, které si můžete (v angličtině) přečíst [zde](https://www.minecraft.net/en-us/eula). Souhlas s těmito podmínami vyjádříte změnou `eula=false` na `eula=true` v tomto souboru.
 
-Hlavní konfigurační soubor Minecraftového serveru je server.properties. Toto je jeho výchozí stav ve verzi 1.19.4:
+Dále je ještě potřeba upravit hlavní konfigurační soubor Minecraftového serveru, což je server.properties. Toto je jeho výchozí stav ve verzi 1.19.4:
 
 ```
 enable-jmx-monitoring=false
@@ -202,7 +202,7 @@ V tomto souboru je několik položek, které je vhodné upravit, než server spu
 
 ## 8. Připojte se k serveru
 
-_TODO_
+Pokud spouštíte server na vlastním počítači, můžete v Minecraftu vytvořit nový server s adresou localhost a připojit se na něj. Pokud ale server spouštíte na jiném počítači ve stejné síti, bude potřeba zadat do této kolonky jeho IP adresu.
 
 ## 9. Umožněte připojení se k serveru z internetu
 
